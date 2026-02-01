@@ -18,10 +18,17 @@ def update_epg():
         # 3. İSİM DEĞİŞTİRME (Düzenleme kısmı burası)
         # FOX gördüğü her yeri NOW yapar. 
         # Bunu kanal ID'si ve display name için yapıyoruz.
+        # 3. İSİM DEĞİŞTİRME (Nokta atışı düzeltme)
         print("Kanal isimleri güncelleniyor...")
-        xml_content = xml_content.replace('display-name>FOX', 'display-name>NOW')
-        xml_content = xml_content.replace('channel="FOX"', 'channel="NOW"')
-        xml_content = xml_content.replace('id="FOX"', 'id="NOW"')
+        
+        # Kanal ID'sini değiştirir (FOX.HD.tr -> NOW.HD.tr)
+        xml_content = xml_content.replace('id="FOX.HD.tr"', 'id="NOW.HD.tr"')
+        
+        # Kanalın görünen adını değiştirir (FOX HD -> NOW HD)
+        xml_content = xml_content.replace('>FOX HD<', '>NOW HD<')
+        
+        # Programlardaki kanal referansını değiştirir (channel="FOX.HD.tr" -> channel="NOW.HD.tr")
+        xml_content = xml_content.replace('channel="FOX.HD.tr"', 'channel="NOW.HD.tr"')
 
         # Başka değiştirmek istediğin kanal varsa buraya ekleyebilirsin:
         # xml_content = xml_content.replace('Eski Kanal', 'Yeni Kanal')
