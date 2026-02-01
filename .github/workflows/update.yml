@@ -1,0 +1,27 @@
+name: Günlük EPG Güncelleme
+on:
+  schedule:
+    - cron: '0 3 * * *' # Her gece 03:00'te çalışır
+  workflow_dispatch: # Manuel çalıştırmak için buton ekler
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodları çek
+        uses: actions/checkout@v2
+      - name: Python Kur
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Kütüphaneleri Kur
+        run: pip install requests beautifulsoup4
+      - name: Scraper'ı Çalıştır
+        run: python scraper.py
+      - name: Güncellenen XML'i Kaydet
+        run: |
+          git config --global user.name 'EPG Bot'
+          git config --global user.email 'bot@github.com'
+          git add epg.xml
+          git commit -m "EPG Güncellendi" || exit 0
+          git push
