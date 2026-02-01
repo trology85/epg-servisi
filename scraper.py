@@ -1,49 +1,39 @@
 import requests
-import json
-from datetime import datetime
+import gzip
+import io
+import os
 
-def fetch_epg():
-    # Türksat'ın veriyi çektiği asıl API ucu
-    url = "https://www.turksatkablo.com.tr/Web_Services/TurksatWebServices.ashx"
+def update_epg():
+    # 1. Kaynak EPG linki (GZ formatında)
+    url = "https://epgshare01.online/epgshare01/epg_ripper_TR1.xml.gz"
     
-    # API'ye gönderilecek özel komut (Yayın akışını getir der)
-    params = {
-        "islem": "YayinAkisi",
-        "tarih": datetime.now().strftime("%d.%m.%Y")
-    }
-    
-    headers = {
-        "User-Agent": "Mozilla/5.0",
-        "Referer": "https://www.turksatkablo.com.tr/yayin-akisi.aspx"
-    }
-
     try:
-        response = requests.get(url, params=params, headers=headers, verify=False)
-        # Gelen veri JSON formatında olacak
-        data = response.json()
+        print("Dosya indiriliyor...")
+        response = requests.get(url, timeout=30)
         
-        xml_content = '<?xml version="1.0" encoding="UTF-8"?>\n<tv>\n'
+        # 2. GZ dosyasını hafızada aç
+        with gzip.GzipFile(fileobj=io.BytesIO(response.content)) as f:
+            xml_content = f.read().decode('utf-8')
         
-        # JSON verisini döngüye sokup XML formatına çeviriyoruz
-        for item in data:
-            kanal = item.get("KanalAd", "Bilinmeyen Kanal")
-            program = item.get("YayinAd", "Program Bilgisi Yok")
-            saat = item.get("YayinSaat", "00:00").replace(":", "")
-            tarih = datetime.now().strftime("%Y%m%d")
-            
-            xml_content += f'  <channel id="{kanal}">\n    <display-name>{kanal}</display-name>\n  </channel>\n'
-            xml_content += f'  <programme start="{tarih}{saat}00 +0300" channel="{kanal}">\n'
-            xml_content += f'    <title>{program}</title>\n  </programme>\n'
-        
-        xml_content += "</tv>"
-        
+        # 3. İSİM DEĞİŞTİRME (Düzenleme kısmı burası)
+        # FOX gördüğü her yeri NOW yapar. 
+        # Bunu kanal ID'si ve display name için yapıyoruz.
+        print("Kanal isimleri güncelleniyor...")
+        xml_content = xml_content.replace('display-name>FOX', 'display-name>NOW')
+        xml_content = xml_content.replace('channel="FOX"', 'channel="NOW"')
+        xml_content = xml_content.replace('id="FOX"', 'id="NOW"')
+
+        # Başka değiştirmek istediğin kanal varsa buraya ekleyebilirsin:
+        # xml_content = xml_content.replace('Eski Kanal', 'Yeni Kanal')
+
+        # 4. Yeni XML dosyası olarak kaydet
         with open("epg.xml", "w", encoding="utf-8") as f:
             f.write(xml_content)
-        
-        print(f"Başarılı! {len(data)} adet yayın bilgisi çekildi.")
+            
+        print("İşlem başarıyla tamamlandı. epg.xml oluşturuldu.")
 
     except Exception as e:
-        print(f"API Hatası: {e}")
+        print(f"Hata oluştu: {e}")
 
 if __name__ == "__main__":
-    fetch_epg()
+    update_epg()
