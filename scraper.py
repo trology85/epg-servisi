@@ -5,7 +5,7 @@ from datetime import datetime
 def fetch_epg():
     url = "https://www.turksatkablo.com.tr/yayin-akisi.aspx"
     headers = {"User-Agent": "Mozilla/5.0"}
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, verify=False)
     soup = BeautifulSoup(response.content, 'html.parser')
     
     # XML Başlangıcı
