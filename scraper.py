@@ -6,13 +6,14 @@ import re
 from datetime import datetime
 
 def get_real_web_data(url):
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    headers = {"User-Agent": "Mozilla/5.0"}
     try:
         r = requests.get(url, headers=headers, timeout=20)
         r.encoding = 'utf-8'
         soup = BeautifulSoup(r.content, 'html.parser')
         programs = []
-        items = soup.find_all(class_=re.compile(r'(broadcast-item|stream-item|timeline-item|card)'))
+        # Hem DMAX hem TRT için ortak arama
+        items = soup.find_all(class_=re.compile(r'(broadcast-item|stream-item|timeline-item)'))
         for item in items:
             time_el = item.select_one('.time') or item.select_one('.hour')
             title_el = item.select_one('.title') or item.select_one('h3')
@@ -37,45 +38,45 @@ def update_epg():
         with gzip.GzipFile(fileobj=io.BytesIO(resp.content)) as f:
             xml_content = f.read().decode('utf-8')
 
-        # --- DİKKATLİ TEMİZLİK (Sadece Hedef Kanallar) ---
-        # Regex'i 'channel="TRT2.tr"' gibi tam eşleşme arayacak şekilde güncelledim.
-        # Böylece TRT 1 veya TRT Haber'e dokunmayacak.
+        # FOX -> NOW Değişimi
+        xml_content = xml_content.replace('id="FOX.HD.tr"', 'id="NOW.HD.tr"')
+        xml_content = xml_content.replace('channel="FOX.HD.tr"', 'channel="NOW.HD.tr"')
+
+        # --- SADECE DMAX TEMİZLİĞİ (TRT'LERE DOKUNMUYORUZ) ---
         xml_content = re.sub(r'<programme[^>]+channel="DMAX\.HD\.tr".*?</programme>', '', xml_content, flags=re.DOTALL)
-        xml_content = re.sub(r'<programme[^>]+channel="TRT2\.tr".*?</programme>', '', xml_content, flags=re.DOTALL)
-        xml_content = re.sub(r'<programme[^>]+channel="TRT 2".*?</programme>', '', xml_content, flags=re.DOTALL)
 
-        # TRT 2 Kanal Tanımı (Eğer yoksa)
-        if 'id="TRT 2"' not in xml_content:
-            xml_content = xml_content.replace('</tv>', '  <channel id="TRT 2">\n    <display-name lang="tr">TRT 2</display-name>\n  </channel>\n</tv>')
-
-        print("2. Veriler web'den çekiliyor...")
+        print("2. Veriler kazınıyor...")
         dmax_list = get_real_web_data("https://www.dmax.com.tr/yayin-akisi")
         trt2_list = get_real_web_data("https://www.trt2.com.tr/yayin-akisi")
 
-        new_programs = ""
+        new_entries = ""
         today = datetime.now().strftime("%Y%m%d")
 
-        # DMAX Verileri
+        # DMAX Ekleme (Büyük harf orijinal ID)
         for p in dmax_list:
             start = f"{today}{p['time'].replace(':', '')}00 +0300"
-            new_programs += f'  <programme start="{start}" channel="DMAX.HD.tr">\n    <title lang="tr">{p["title"]}</title>\n    <desc lang="tr">{p["desc"]}</desc>\n  </programme>\n'
+            new_entries += f'  <programme start="{start}" channel="DMAX.HD.tr">\n    <title lang="tr">{p["title"]}</title>\n    <desc lang="tr">{p["desc"]}</desc>\n  </programme>\n'
 
-        # TRT 2 Verileri (Hem 'TRT 2' hem 'TRT2.tr' ID'sine basıyoruz ki garanti olsun)
-        for p in trt2_list:
-            start = f"{today}{p['time'].replace(':', '')}00 +0300"
-            for cid in ["TRT 2", "TRT2.tr"]:
-                new_programs += f'  <programme start="{start}" channel="{cid}">\n    <title lang="tr">{p["title"]}</title>\n    <desc lang="tr">{p["desc"]}</desc>\n  </programme>\n'
+        # TRT 2 Ekleme (Sadece dosyanın en sonuna ekliyoruz, mevcutları silmiyoruz)
+        if trt2_list:
+            # TRT 2 Kimlik Tanımı
+            new_entries += '  <channel id="TRT2.tr">\n    <display-name lang="tr">TRT 2</display-name>\n  </channel>\n'
+            for p in trt2_list:
+                start = f"{today}{p['time'].replace(':', '')}00 +0300"
+                new_entries += f'  <programme start="{start}" channel="TRT2.tr">\n    <title lang="tr">{p["title"]}</title>\n    <desc lang="tr">{p["desc"]}</desc>\n  </programme>\n'
 
-        # Boş açıklamaları doldur (Diğer kanallar için)
+        # Boş açıklamaları doldur (Genel yama)
         pattern = r'(<programme[^>]*>\s*<title[^>]*>.*?</title>)(?!\s*<desc)'
         replacement = r'\1\n    <desc lang="tr">Yayın akışı detayları.</desc>'
         xml_content = re.sub(pattern, replacement, xml_content, flags=re.DOTALL)
 
-        xml_content = xml_content.replace('</tv>', new_programs + '</tv>')
+        # Her şeyi en sona ekle
+        xml_content = xml_content.replace('</tv>', new_entries + '</tv>')
 
         with open("epg.xml", "w", encoding="utf-8") as f:
             f.write(xml_content)
-        print(f"Bitti! TRT 2 için {len(trt2_list)} program eklendi.")
+            
+        print(f"--- BAŞARILI --- DMAX: {len(dmax_list)} | TRT 2: {len(trt2_list)}")
 
     except Exception as e:
         print(f"Hata: {e}")
