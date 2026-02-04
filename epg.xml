@@ -56256,8 +56256,24 @@
     <title lang="tr">İtalya Serie A</title>
     <desc lang="tr">Özetler.</desc>
   </programme>
-  <channel id="TRT2.tr">
+  <channel id="TRT 2">
     <display-name lang="tr">TRT 2</display-name>
+    <display-name lang="tr">TRT 2 HD</display-name>
+  </channel>
+  <channel id="TRT2.tr">
+    <display-name lang="tr">TRT2.tr</display-name>
+    <display-name lang="tr">TRT 2 HD</display-name>
+  </channel>
+  <channel id="TRT 2 HD">
+    <display-name lang="tr">TRT 2 HD</display-name>
+    <display-name lang="tr">TRT 2 HD</display-name>
+  </channel>
+  <channel id="trt 2">
+    <display-name lang="tr">trt 2</display-name>
+    <display-name lang="tr">TRT 2 HD</display-name>
+  </channel>
+  <channel id="trt2.tr">
+    <display-name lang="tr">trt2.tr</display-name>
     <display-name lang="tr">TRT 2 HD</display-name>
   </channel>
 </tv>
