@@ -76,7 +76,7 @@
     <display-name lang="tr">KANAL 7 HD</display-name>
     <url>http://www.turksatkablo.com.tr</url>
   </channel>
-  <channel id="FOX.HD.tr">
+  <channel id="NOW.HD.tr">
     <display-name lang="tr">FOX HD</display-name>
     <url>http://www.turksatkablo.com.tr</url>
   </channel>
@@ -3378,159 +3378,159 @@
     <title lang="tr">TV Filmi</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260204000000 +0300" stop="20260204024500 +0300" channel="FOX.HD.tr">
+  <programme start="20260204000000 +0300" stop="20260204024500 +0300" channel="NOW.HD.tr">
     <title lang="tr">Yeraltı</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260204024500 +0300" stop="20260204050000 +0300" channel="FOX.HD.tr">
+  <programme start="20260204024500 +0300" stop="20260204050000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Yeraltı</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260204050000 +0300" stop="20260204060000 +0300" channel="FOX.HD.tr">
+  <programme start="20260204050000 +0300" stop="20260204060000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Yasak Elma</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260204060000 +0300" stop="20260204073000 +0300" channel="FOX.HD.tr">
+  <programme start="20260204060000 +0300" stop="20260204073000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Karagül</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260204073000 +0300" stop="20260204080000 +0300" channel="FOX.HD.tr">
+  <programme start="20260204073000 +0300" stop="20260204080000 +0300" channel="NOW.HD.tr">
     <title lang="tr">İlk Bakış</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260204080000 +0300" stop="20260204104500 +0300" channel="FOX.HD.tr">
+  <programme start="20260204080000 +0300" stop="20260204104500 +0300" channel="NOW.HD.tr">
     <title lang="tr">İlker Karagöz ile Çalar Saat</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260204104500 +0300" stop="20260204123000 +0300" channel="FOX.HD.tr">
+  <programme start="20260204104500 +0300" stop="20260204123000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Çağla ile Yeni Bir Gün</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260204123000 +0300" stop="20260204133000 +0300" channel="FOX.HD.tr">
+  <programme start="20260204123000 +0300" stop="20260204133000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Yasak Elma</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260204133000 +0300" stop="20260204163000 +0300" channel="FOX.HD.tr">
+  <programme start="20260204133000 +0300" stop="20260204163000 +0300" channel="NOW.HD.tr">
     <title lang="tr">En Hamarat Benim</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260204163000 +0300" stop="20260204190000 +0300" channel="FOX.HD.tr">
+  <programme start="20260204163000 +0300" stop="20260204190000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Yeraltı</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260204190000 +0300" stop="20260204200000 +0300" channel="FOX.HD.tr">
+  <programme start="20260204190000 +0300" stop="20260204200000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Selçuk Tepeli ile NOW Ana Haber</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260204200000 +0300" stop="20260204204500 +0300" channel="FOX.HD.tr">
+  <programme start="20260204200000 +0300" stop="20260204204500 +0300" channel="NOW.HD.tr">
     <title lang="tr">Yeraltı - özet</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260204204500 +0300" stop="20260205013000 +0300" channel="FOX.HD.tr">
+  <programme start="20260204204500 +0300" stop="20260205013000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Yeraltı</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260205013000 +0300" stop="20260205034500 +0300" channel="FOX.HD.tr">
+  <programme start="20260205013000 +0300" stop="20260205034500 +0300" channel="NOW.HD.tr">
     <title lang="tr">Kıskanmak</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260205034500 +0300" stop="20260205050000 +0300" channel="FOX.HD.tr">
+  <programme start="20260205034500 +0300" stop="20260205050000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Şevkat Yerimdar</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260205050000 +0300" stop="20260205060000 +0300" channel="FOX.HD.tr">
+  <programme start="20260205050000 +0300" stop="20260205060000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Yasak Elma</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260205060000 +0300" stop="20260205073000 +0300" channel="FOX.HD.tr">
+  <programme start="20260205060000 +0300" stop="20260205073000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Karagül</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260205073000 +0300" stop="20260205080000 +0300" channel="FOX.HD.tr">
+  <programme start="20260205073000 +0300" stop="20260205080000 +0300" channel="NOW.HD.tr">
     <title lang="tr">İlk Bakış</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260205080000 +0300" stop="20260205104500 +0300" channel="FOX.HD.tr">
+  <programme start="20260205080000 +0300" stop="20260205104500 +0300" channel="NOW.HD.tr">
     <title lang="tr">İlker Karagöz ile Çalar Saat</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260205104500 +0300" stop="20260205123000 +0300" channel="FOX.HD.tr">
+  <programme start="20260205104500 +0300" stop="20260205123000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Çağla ile Yeni Bir Gün</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260205123000 +0300" stop="20260205133000 +0300" channel="FOX.HD.tr">
+  <programme start="20260205123000 +0300" stop="20260205133000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Yasak Elma</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260205133000 +0300" stop="20260205163000 +0300" channel="FOX.HD.tr">
+  <programme start="20260205133000 +0300" stop="20260205163000 +0300" channel="NOW.HD.tr">
     <title lang="tr">En Hamarat Benim</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260205163000 +0300" stop="20260205190000 +0300" channel="FOX.HD.tr">
+  <programme start="20260205163000 +0300" stop="20260205190000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Halef</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260205190000 +0300" stop="20260205200000 +0300" channel="FOX.HD.tr">
+  <programme start="20260205190000 +0300" stop="20260205200000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Selçuk Tepeli ile NOW Ana Haber</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260205200000 +0300" stop="20260205210000 +0300" channel="FOX.HD.tr">
+  <programme start="20260205200000 +0300" stop="20260205210000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Halef: Köklerin Çağrısı - Özet</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260205210000 +0300" stop="20260206000000 +0300" channel="FOX.HD.tr">
+  <programme start="20260205210000 +0300" stop="20260206000000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Halef</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260206000000 +0300" stop="20260206023000 +0300" channel="FOX.HD.tr">
+  <programme start="20260206000000 +0300" stop="20260206023000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Yeraltı</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260206023000 +0300" stop="20260206050000 +0300" channel="FOX.HD.tr">
+  <programme start="20260206023000 +0300" stop="20260206050000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Yeraltı</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260206050000 +0300" stop="20260206060000 +0300" channel="FOX.HD.tr">
+  <programme start="20260206050000 +0300" stop="20260206060000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Yasak Elma</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260206060000 +0300" stop="20260206073000 +0300" channel="FOX.HD.tr">
+  <programme start="20260206060000 +0300" stop="20260206073000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Karagül</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260206073000 +0300" stop="20260206080000 +0300" channel="FOX.HD.tr">
+  <programme start="20260206073000 +0300" stop="20260206080000 +0300" channel="NOW.HD.tr">
     <title lang="tr">İlk Bakış</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260206080000 +0300" stop="20260206104500 +0300" channel="FOX.HD.tr">
+  <programme start="20260206080000 +0300" stop="20260206104500 +0300" channel="NOW.HD.tr">
     <title lang="tr">İlker Karagöz ile Çalar Saat</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260206104500 +0300" stop="20260206123000 +0300" channel="FOX.HD.tr">
+  <programme start="20260206104500 +0300" stop="20260206123000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Çağla ile Yeni Bir Gün</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260206123000 +0300" stop="20260206133000 +0300" channel="FOX.HD.tr">
+  <programme start="20260206123000 +0300" stop="20260206133000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Yasak Elma</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260206133000 +0300" stop="20260206163000 +0300" channel="FOX.HD.tr">
+  <programme start="20260206133000 +0300" stop="20260206163000 +0300" channel="NOW.HD.tr">
     <title lang="tr">En Hamarat Benim</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260206163000 +0300" stop="20260206190000 +0300" channel="FOX.HD.tr">
+  <programme start="20260206163000 +0300" stop="20260206190000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Yeraltı</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260206190000 +0300" stop="20260206200000 +0300" channel="FOX.HD.tr">
+  <programme start="20260206190000 +0300" stop="20260206200000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Selçuk Tepeli ile NOW Ana Haber</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260206200000 +0300" stop="20260206230000 +0300" channel="FOX.HD.tr">
+  <programme start="20260206200000 +0300" stop="20260206230000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Yeraltı</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
-  <programme start="20260206230000 +0300" stop="20260207020000 +0300" channel="FOX.HD.tr">
+  <programme start="20260206230000 +0300" stop="20260207020000 +0300" channel="NOW.HD.tr">
     <title lang="tr">Sahtekarlar</title>
     <desc lang="tr">Yayın akışı detayları.</desc>
   </programme>
@@ -56256,7 +56256,4 @@
     <title lang="tr">İtalya Serie A</title>
     <desc lang="tr">Özetler.</desc>
   </programme>
-  <channel id="TRT 2">
-    <display-name lang="tr">TRT 2</display-name>
-  </channel>
 </tv>
