@@ -6,52 +6,47 @@ import re
 from datetime import datetime
 
 def get_real_web_data(url):
+    # Daha gerçekçi bir tarayıcı kimliği
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+        "Accept-Language": "tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7",
+        "Referer": "https://www.google.com/"
     }
     try:
-        r = requests.get(url, headers=headers, timeout=20)
+        r = requests.get(url, headers=headers, timeout=25)
         r.encoding = 'utf-8'
+        if r.status_code != 200:
+            print(f"Siteye erişilemedi: {url} (Kod: {r.status_code})")
+            return []
+            
         soup = BeautifulSoup(r.content, 'html.parser')
         programs = []
         
-        # TRT ve DMAX için tüm olası class isimlerini tarıyoruz
-        items = soup.find_all(class_=re.compile(r'(broadcast-item|stream-item|timeline-item|card)'))
+        # TRT 2 ÖZEL: Sitedeki akış listesini kapsayan div'leri bulmaya çalışalım
+        # TRT sitesi bazen 'li' etiketleri içinde 'span' kullanır.
+        items = soup.find_all(['div', 'li', 'tr'], class_=re.compile(r'(item|broadcast|stream|card|timeline)'))
         
         for item in items:
-            # Zamanı bul (Farklı class isimlerine bakıyoruz)
-            time_el = item.select_one('.time') or item.select_one('.hour') or item.select_one('.date')
-            # Başlığı bul
-            title_el = item.select_one('.title') or item.select_one('h3') or item.select_one('.name')
-            # Açıklamayı bul
-            desc_el = item.select_one('.description') or item.select_one('p') or item.select_one('.short-description')
+            # Zamanı bul (00:00 formatı için her yere bak)
+            time_el = item.find(string=re.compile(r'^\d{2}[:\.]\d{2}$'))
+            # Başlığı bul (Genelde h3, h4 veya güçlü yazılmış span olur)
+            title_el = item.find(['h2', 'h3', 'h4', 'span', 'div'], class_=re.compile(r'(title|name|subject)'))
             
             if time_el and title_el:
-                time_str = time_el.get_text(strip=True)
-                # Sadece HH:MM formatındaki (00:00 gibi) verileri al
-                if re.match(r'^\d{2}[:\.]\d{2}$', time_str):
+                time_str = time_el.strip().replace('.', ':')
+                title_str = title_el.get_text(strip=True)
+                
+                # Tekrar eden verileri engellemek için kontrol
+                if not any(p['time'] == time_str for p in programs):
                     programs.append({
-                        'time': time_str.replace('.', ':'),
-                        'title': title_el.get_text(strip=True),
-                        'desc': desc_el.get_text(strip=True) if desc_el else "Program detayı bulunmuyor."
+                        'time': time_str,
+                        'title': title_str,
+                        'desc': title_str + " - TRT 2 ekranlarında yayınlanmaktadır." # Basit bir açıklama oluştur
                     })
         
-        # Eğer yukarıdaki yöntem boş dönerse (Alternatif TRT tablosu)
-        if not programs:
-            for row in soup.find_all('tr'):
-                cols = row.find_all('td')
-                if len(cols) >= 2:
-                    time_str = cols[0].get_text(strip=True)
-                    if re.match(r'^\d{2}[:\.]\d{2}$', time_str):
-                        programs.append({
-                            'time': time_str.replace('.', ':'),
-                            'title': cols[1].get_text(strip=True),
-                            'desc': cols[2].get_text(strip=True) if len(cols) > 2 else "Yayın akışı."
-                        })
-        
-        return programs
+        return sorted(programs, key=lambda x: x['time'])
     except Exception as e:
-        print(f"Kazıma hatası ({url}): {e}")
+        print(f"Hata: {url} kazınırken hata oluştu: {e}")
         return []
 
 def update_epg():
@@ -62,53 +57,54 @@ def update_epg():
         with gzip.GzipFile(fileobj=io.BytesIO(resp.content)) as f:
             xml_content = f.read().decode('utf-8')
 
-        # FOX -> NOW Değişimi
+        # NOW Değişimi
         xml_content = xml_content.replace('id="FOX.HD.tr"', 'id="NOW.HD.tr"')
         xml_content = xml_content.replace('channel="FOX.HD.tr"', 'channel="NOW.HD.tr"')
 
-        # --- KANAL TANIMLARI ---
-        # Uygulamanın yakalayabileceği en güçlü ID'leri ekliyoruz
+        # --- GÜVENLİ TEMİZLİK ---
+        xml_content = re.sub(r'<programme[^>]+channel="DMAX\.HD\.tr".*?</programme>', '', xml_content, flags=re.DOTALL)
+        
+        # Sadece TRT 2 ID'lerini temizle, diğer TRT'lere dokunma
         custom_ids = ["TRT 2", "TRT2.tr", "TRT 2 HD"]
+        for cid in custom_ids:
+            # Nokta atışı temizlik
+            xml_content = re.sub(f'<programme[^>]+channel="{re.escape(cid)}".*?</programme>', '', xml_content, flags=re.DOTALL)
+            # Kanal tanımını da yenilemek için eğer varsa silip sonra ekleyelim
+            xml_content = re.sub(f'<channel id="{re.escape(cid)}".*?</channel>', '', xml_content, flags=re.DOTALL)
+
+        # Kanal Tanımlarını Ekle
         trt_defs = ""
         for cid in custom_ids:
             trt_defs += f'  <channel id="{cid}">\n    <display-name lang="tr">{cid}</display-name>\n  </channel>\n'
         xml_content = xml_content.replace('</tv>', trt_defs + '</tv>')
 
-        # Temizlik
-        xml_content = re.sub(r'<programme[^>]+channel="DMAX\.HD\.tr".*?</programme>', '', xml_content, flags=re.DOTALL)
-        for cid in custom_ids:
-            xml_content = re.sub(f'<programme[^>]+channel="{cid}".*?</programme>', '', xml_content, flags=re.DOTALL)
-
-        print("2. Veriler web'den çekiliyor...")
+        print("2. Veriler çekiliyor...")
         dmax_list = get_real_web_data("https://www.dmax.com.tr/yayin-akisi")
         trt2_list = get_real_web_data("https://www.trt2.com.tr/yayin-akisi")
 
         new_programs = ""
         today = datetime.now().strftime("%Y%m%d")
 
-        # DMAX Verileri (DMAX.HD.tr için)
+        # DMAX Ekleme
         for p in dmax_list:
             start = f"{today}{p['time'].replace(':', '')}00 +0300"
-            new_programs += f'  <programme start="{start}" channel="DMAX.HD.tr">\n'
-            new_programs += f'    <title lang="tr">{p["title"]}</title>\n'
-            new_programs += f'    <desc lang="tr">{p["desc"]}</desc>\n  </programme>\n'
+            new_programs += f'  <programme start="{start}" channel="DMAX.HD.tr">\n    <title lang="tr">{p["title"]}</title>\n    <desc lang="tr">{p["desc"]}</desc>\n  </programme>\n'
 
-        # TRT 2 Verileri (Belirlediğimiz 3 ID için de basıyoruz)
+        # TRT 2 Ekleme
         for p in trt2_list:
             start = f"{today}{p['time'].replace(':', '')}00 +0300"
             for cid in custom_ids:
-                new_programs += f'  <programme start="{start}" channel="{cid}">\n'
-                new_programs += f'    <title lang="tr">{p["title"]}</title>\n'
-                new_programs += f'    <desc lang="tr">{p["desc"]}</desc>\n  </programme>\n'
+                new_programs += f'  <programme start="{start}" channel="{cid}">\n    <title lang="tr">{p["title"]}</title>\n    <desc lang="tr">{p["desc"]}</desc>\n  </programme>\n'
 
         xml_content = xml_content.replace('</tv>', new_programs + '</tv>')
 
         with open("epg.xml", "w", encoding="utf-8") as f:
             f.write(xml_content)
-        print(f"--- BİTTİ! DMAX: {len(dmax_list)} | TRT 2: {len(trt2_list)} program bulundu. ---")
+            
+        print(f"--- SONUÇ --- DMAX: {len(dmax_list)} | TRT 2: {len(trt2_list)} program.")
 
     except Exception as e:
-        print(f"Hata: {e}")
+        print(f"Genel hata: {e}")
 
 if __name__ == "__main__":
     update_epg()
