@@ -56,7 +56,7 @@ def get_real_trt2():
                 
                 start_time = datetime.now().strftime("%Y%m%d") + time_str.replace(":", "") + "00 +0300"
                 
-                epg_data += f'  <programme start="{start_time}" channel="TRT2.tr">\n'
+                epg_data += f'  <programme start="{start_time}" channel="TRT2.HDtr">\n'
                 epg_data += f'    <title lang="tr">{title}</title>\n'
                 epg_data += f'    <desc lang="tr">{description}</desc>\n'
                 epg_data += f'  </programme>\n'
