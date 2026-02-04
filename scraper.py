@@ -75,6 +75,36 @@ def update_epg():
         xml_content = re.sub(r'<programme[^>]+channel="TRT2.*?".*?</programme>', '', xml_content, flags=re.DOTALL)
         xml_content = re.sub(r'<programme[^>]+channel="trt2.*?".*?</programme>', '', xml_content, flags=re.DOTALL)
         
-        # KANAL TANIMLAMALARI (Hata olmaması için düz metin olarak ekliyoruz)
-        custom_channels = '  <channel id="dmax.hd.tr">\n    <display-name lang="tr">DMAX HD</display-name>\n    <display-name lang="tr">DMAX</display-name>\n  </channel>\n'
-        custom_channels += '  <channel id="trt2.hd.tr">\n    <display-name lang="tr">TRT 2 HD</display-name>\n    <display-name lang="tr">TRT 2</display-name>\n    <display
+        # KANAL TANIMLAMALARI (Hata payını sıfırlamak için parçalı ekleme)
+        c_list = []
+        c_list.append('  <channel id="dmax.hd.tr">')
+        c_list.append('    <display-name lang="tr">DMAX HD</display-name>')
+        c_list.append('  </channel>')
+        c_list.append('  <channel id="trt2.hd.tr">')
+        c_list.append('    <display-name lang="tr">TRT 2 HD</display-name>')
+        c_list.append('    <display-name lang="tr">TRT 2</display-name>')
+        c_list.append('    <display-name lang="tr">trt 2 hd</display-name>')
+        c_list.append('  </channel>')
+        
+        custom_channels = "\n".join(c_list) + "\n"
+        xml_content = xml_content.replace('</tv>', custom_channels + '</tv>')
+
+        print("2. Web sitelerinden veriler alınıyor...")
+        extra_epg = get_real_dmax() + get_real_trt2()
+        
+        print("3. Boş açıklamalar için yama yapılıyor...")
+        pattern = r'(<programme[^>]*>\s*<title[^>]*>.*?</title>)(?!\s*<desc)'
+        replacement = r'\1\n    <desc lang="tr">Program detayları ve canlı yayın akışı.</desc>'
+        xml_content = re.sub(pattern, replacement, xml_content, flags=re.DOTALL)
+
+        xml_content = xml_content.replace('</tv>', extra_epg + '\n</tv>')
+
+        with open("epg.xml", "w", encoding="utf-8") as f:
+            f.write(xml_content)
+        print("--- İŞLEM BAŞARIYLA TAMAMLANDI ---")
+
+    except Exception as e:
+        print(f"Hata: {e}")
+
+if __name__ == "__main__":
+    update_epg()
