@@ -1,57 +1,59 @@
 import requests
 import gzip
 import io
-import re
+import xml.etree.ElementTree as ET
 
 def update_epg():
-    # 1. ANA KAYNAK: Tüm kanalların doğru saatli listesi
     main_url = "https://epgshare01.online/epgshare01/epg_ripper_TR1.xml.gz"
-    # 2. ZENGİN KAYNAK: Sadece TRT 2'nin detaylı açıklamalarını buradan alacağız
     rich_url = "https://streams.uzunmuhalefet.com/epg/tr.xml"
 
     try:
         print("1. Kaynaklar indiriliyor...")
-        # Ana listeyi indir ve aç
+        # Ana Dosya (TR1)
         resp_main = requests.get(main_url, timeout=30)
         with gzip.GzipFile(fileobj=io.BytesIO(resp_main.content)) as f:
-            xml_main = f.read().decode('utf-8')
+            main_root = ET.fromstring(f.read())
 
-        # Zengin listeyi indir
+        # Zengin Dosya (tr.xml)
         resp_rich = requests.get(rich_url, timeout=30)
         resp_rich.encoding = 'utf-8'
-        xml_rich = resp_rich.text
+        rich_root = ET.fromstring(resp_rich.text)
 
-        print("2. TRT 2 içeriği ayıklanıyor ve 'TRT2 HD' olarak etiketleniyor...")
+        print("2. TRT 2 verisi cerrahi yöntemle aktarılıyor...")
         
-        # Zengin kaynaktaki kanal adı "TRT 2" olarak geçiyor. 
-        # Onu bulup senin sistemindeki "TRT2 HD"ye çeviriyoruz.
-        trt2_pattern = r'<programme[^>]+channel="TRT 2".*?</programme>'
-        trt2_matches = re.findall(trt2_pattern, xml_rich, flags=re.DOTALL)
-        
-        trt2_custom_content = ""
-        for m in trt2_matches:
-            # Kanal ismini senin cihazındaki isme (TRT2 HD) tam olarak eşliyoruz
-            fixed_p = m.replace('channel="TRT 2"', 'channel="TRT2 HD"')
-            trt2_custom_content += fixed_p + "\n"
+        # Zengin kaynaktan TRT 2 programlarını bul ve kopyala
+        for prog in rich_root.findall("programme"):
+            if prog.get("channel") == "TRT 2":
+                # Kanal adını senin sistemindeki isme (TRT2 HD) çevir
+                prog.set("channel", "TRT2 HD")
+                # Bu program bloğunu ana dosyanın içine güvenli bir şekilde ekle
+                main_root.append(prog)
 
-        # --- DÜZELTMELER ---
-        # 1. Ana listedeki FOX'u NOW yapalım (senin sistemin için gerekliyse)
-        xml_main = xml_main.replace('id="FOX.HD.tr"', 'id="NOW.HD.tr"').replace('channel="FOX.HD.tr"', 'channel="NOW.HD.tr"')
-        
-        # 2. Eğer ana listede TRT 2 zaten varsa (açıklamasız hali), çakışma olmasın diye onu temizleyebiliriz
-        # Ama şimdilik sadece sonuna eklemek de işe yarayacaktır.
-        
-        # Birleştirme: Tüm listeyi al, kapanıştan hemen önce bizim zengin TRT 2'yi enjekte et
-        final_xml = xml_main.replace("</tv>", trt2_custom_content + "</tv>")
+        print("3. FOX -> NOW dönüşümü yapılıyor...")
+        # FOX kanallarını NOW olarak güncelle
+        for channel in main_root.findall("channel"):
+            if channel.get("id") == "FOX.HD.tr":
+                channel.set("id", "NOW.HD.tr")
+                display_name = channel.find("display-name")
+                if display_name is not None:
+                    display_name.text = "NOW"
 
-        print("3. Dosya 'utf-8-sig' ile mühürleniyor (Karakter sorunu için)...")
-        with open("epg.xml", "w", encoding="utf-8-sig") as f:
-            f.write(final_xml)
+        for prog in main_root.findall("programme"):
+            if prog.get("channel") == "FOX.HD.tr":
+                prog.set("channel", "NOW.HD.tr")
+
+        # Dosyayı kaydet
+        print("4. XML yapısı doğrulanıyor ve kaydediliyor...")
+        tree = ET.ElementTree(main_root)
+        
+        # UTF-8 ve XML Deklarasyonu ile kaydet (En güvenli format)
+        with open("epg.xml", "wb") as f:
+            tree.write(f, encoding="utf-8", xml_declaration=True)
             
-        print("--- BAŞARILI: TRT2 HD açıklamalarıyla eklendi, diğer kanallar korundu! ---")
+        print("--- BAŞARILI: XML yapısı korundu, crash riski ortadan kalktı! ---")
 
     except Exception as e:
-        print(f"Hata: {e}")
+        print(f"Hata detayı: {e}")
 
 if __name__ == "__main__":
     update_epg()
