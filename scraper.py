@@ -3,40 +3,41 @@ import gzip
 import io
 import re
 from datetime import datetime
-import xml.etree.ElementTree as ET
 
-def get_programmes_from_external_xml(source_url, target_channel_id):
-    """Büyük bir EPG dosyasını indirir ve içinden belirli bir kanalı ayıklar."""
-    print(f"   - {target_channel_id} için {source_url} taranıyor...")
+def get_channel_from_xml(url, target_id, my_id):
+    """Belirli bir XML linkinden belirli bir kanalı çeker ve ID'sini günceller."""
     headers = {"User-Agent": "Mozilla/5.0"}
     try:
-        resp = requests.get(source_url, timeout=40)
-        # Eğer dosya sıkıştırılmışsa (.gz) aç
-        if source_url.endswith('.gz'):
+        print(f"   - {target_id} aranıyor: {url}")
+        resp = requests.get(url, headers=headers, timeout=30)
+        # Dosya sıkıştırılmış mı kontrol et
+        if url.endswith('.gz'):
             with gzip.GzipFile(fileobj=io.BytesIO(resp.content)) as f:
                 content = f.read().decode('utf-8')
         else:
-            content = resp.text
-        
-        # Regex ile sadece bu kanala ait programları söküp alalım
-        # Bu yöntem XML parse etmekten çok daha hızlıdır
-        pattern = f'<programme[^>]+channel="{re.escape(target_channel_id)}".*?</programme>'
+            content = resp.text # Senin verdiğin link düz XML
+
+        # Regex: Bu kanala ait tüm <programme> bloklarını bul
+        # Not: Kaynakta kanal id'si tam olarak nasılsa onu arıyoruz
+        pattern = f'<programme[^>]+channel="{re.escape(target_id)}".*?</programme>'
         matches = re.findall(pattern, content, flags=re.DOTALL)
-        return matches
+        
+        # Bulunan programlardaki kanal ismini senin istediğin (my_id) ile değiştir
+        fixed_matches = []
+        for p in matches:
+            fixed_p = re.sub(r'channel="[^"]+"', f'channel="{my_id}"', p)
+            fixed_matches.append(fixed_p)
+            
+        return fixed_matches
     except Exception as e:
-        print(f"   ! Kaynak hatası: {e}")
+        print(f"   ! Hata: {e}")
         return []
 
 def update_epg():
-    # Ana EPG dosyamız (Senin kullandığın)
+    # Senin verdiğin yeni ve sağlam kaynak
+    gold_source = "https://streams.uzunmuhalefet.com/epg/tr.xml"
+    # Orijinal ana kaynak (Diğer kanallar için)
     main_url = "https://epgshare01.online/epgshare01/epg_ripper_TR1.xml.gz"
-    
-    # CNBC-e ve DMAX'i bulabileceğimiz alternatif dev havuzlar
-    alt_sources = [
-        "https://iptv-org.github.io/epg/guides/tr/beintv.com.epg.xml",
-        "https://raw.githubusercontent.com/LITUATUI/GUIA-TV/master/guia.xml.gz",
-        "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz"
-    ]
 
     try:
         print("1. Ana EPG indiriliyor...")
@@ -49,39 +50,27 @@ def update_epg():
         xml_content = xml_content.replace('channel="FOX.HD.tr"', 'channel="NOW.HD.tr"')
 
         # --- TEMİZLİK ---
-        # Mevcut (boş veya hatalı) DMAX ve CNBC-e verilerini siliyoruz
         xml_content = re.sub(r'<programme[^>]+channel="DMAX\.HD\.tr".*?</programme>', '', xml_content, flags=re.DOTALL)
         xml_content = re.sub(r'<programme[^>]+channel="CNBC-E".*?</programme>', '', xml_content, flags=re.DOTALL)
 
-        print("2. Alternatif havuzlardan veri toplanıyor...")
+        print("2. Yeni kaynaktan veriler çekiliyor...")
         
-        # CNBC-E ARAYIŞI
-        cnbce_programmes = []
-        for source in alt_sources:
-            # CNBC-e havuzlarda farklı ID'lerle olabilir, hepsini deneyelim
-            for possible_id in ["CNBC-e.tr", "CNBC-E", "CNBCE.tr"]:
-                found = get_programmes_from_external_xml(source, possible_id)
-                if found:
-                    # Bulunanları bizim kendi ID'mizle ("CNBC-E") değiştirerek ekle
-                    for p in found:
-                        p_fixed = re.sub(r'channel="[^"]+"', 'channel="CNBC-E"', p)
-                        cnbce_programmes.append(p_fixed)
-                    break
-            if cnbce_programmes: break
+        # CNBC-e Çekme (Kaynaktaki ID'si: "CNBC-e", Senin istediğin: "CNBC-E")
+        cnbce_data = get_channel_from_xml(gold_source, "CNBC-e", "CNBC-E")
+        
+        # DMAX Çekme (Kaynaktaki ID'si: "DMAX", senin sistemindekiyle eşleştiriyoruz)
+        dmax_data = get_channel_from_xml(gold_source, "DMAX", "DMAX.HD.tr")
 
-        # DMAX ARAYIŞI (Zaten çalışıyordu ama daha sağlam olsun diye havuzdan da bakıyoruz)
-        dmax_programmes = get_programmes_from_external_xml(main_url, "DMAX.HD.tr")
-
-        print(f"> Sonuç: DMAX için {len(dmax_programmes)}, CNBC-e için {len(cnbce_programmes)} veri bulundu.")
+        print(f"> SONUÇ: DMAX: {len(dmax_data)} | CNBC-e: {len(cnbce_data)}")
 
         # --- BİRLEŞTİRME ---
-        # Kanal tanımlarını garantiye al
+        # Kanal tanımlarını en sona ekle
         for cid in ["DMAX.HD.tr", "CNBC-E"]:
             if f'id="{cid}"' not in xml_content:
                 xml_content = xml_content.replace('</tv>', f'  <channel id="{cid}">\n    <display-name lang="tr">{cid}</display-name>\n  </channel>\n</tv>')
 
-        # Bulunan programları ekle
-        all_new = "\n".join(dmax_programmes) + "\n" + "\n".join(cnbce_programmes)
+        # Programları ekle
+        all_new = "\n".join(dmax_data) + "\n" + "\n".join(cnbce_data)
         xml_content = xml_content.replace('</tv>', all_new + "\n</tv>")
 
         with open("epg.xml", "w", encoding="utf-8") as f:
@@ -89,7 +78,7 @@ def update_epg():
         print("--- İŞLEM TAMAMLANDI ---")
 
     except Exception as e:
-        print(f"Hata: {e}")
+        print(f"Sistem Hatası: {e}")
 
 if __name__ == "__main__":
     update_epg()
