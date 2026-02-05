@@ -1,70 +1,67 @@
 import requests
+from bs4 import BeautifulSoup
 import gzip
 import io
 import re
-from datetime import datetime, timedelta
+from datetime import datetime
 
-# 1. SAAT KAYDIRMA FONKSİYONU (EKSİKSİZ)
-def offset_time(xml_fragment, hours_to_add):
-    # EPG saat formatını (20260205053000 +0000) bulup kaydırır
-    time_pattern = r'(\d{14})\s\+\d{4}'
-    def shift_match(match):
-        time_str = match.group(1)
-        dt = datetime.strptime(time_str, "%Y%m%d%H%M%S")
-        new_dt = dt + timedelta(hours=hours_to_add)
-        # Türkiye saati olan +0300 olarak mühürler
-        return new_dt.strftime("%Y%m%d%H%M%S") + " +0300"
-    return re.sub(time_pattern, shift_match, xml_fragment)
+def get_real_dmax():
+    """DMAX'in resmi sitesinden gerçek yayın akışını çeker."""
+    url = "https://www.dmax.com.tr/yayin-akisi"
+    headers = {"User-Agent": "Mozilla/5.0"}
+    try:
+        r = requests.get(url, headers=headers, timeout=20)
+        soup = BeautifulSoup(r.content, 'html.parser')
+        epg_data = ""
+        
+        # Sitedeki her bir yayın satırını bul (DMAX'in güncel sitesine göre ayarlandı)
+        items = soup.select('.broadcast-item') # Sitenin yapısına göre güncellendi
+        for item in items:
+            time_str = item.select_one('.time').text.strip() # Örn: 21:00
+            title = item.select_one('.title').text.strip()
+            
+            # Zamanı XML formatına çevir (Bugünün tarihi + saat)
+            start_time = datetime.now().strftime("%Y%m%d") + time_str.replace(":", "") + "00 +0300"
+            
+            epg_data += f'  <programme start="{start_time}" channel="DMAX.HD.tr">\n'
+            epg_data += f'    <title lang="tr">{title}</title>\n'
+            epg_data += f'  </programme>\n'
+        return epg_data
+    except:
+        return ""
 
-# 2. ANA GÜNCELLEME FONKSİYONU (EKSİKSİZ)
 def update_epg():
     main_url = "https://epgshare01.online/epgshare01/epg_ripper_TR1.xml.gz"
-    rich_url = "https://streams.uzunmuhalefet.com/epg/tr.xml"
-
+    
     try:
-        print("1. Kaynaklar indiriliyor...")
-        # Ana Liste İndirme (Saatleri doğru olan TR1)
-        resp_main = requests.get(main_url, timeout=30)
-        with gzip.GzipFile(fileobj=io.BytesIO(resp_main.content)) as f:
-            xml_main = f.read().decode('utf-8')
-
-        # Zengin Liste İndirme (DMAX ve TRT 2'nin detaylı olduğu yer)
-        resp_rich = requests.get(rich_url, timeout=30)
-        resp_rich.encoding = 'utf-8'
-        xml_rich = resp_rich.text
-
-        # --- DMAX ÖZEL MÜDAHALE ---
-        print("2. DMAX verisi 'saat düzeltilerek' hazırlanıyor...")
-        dmax_pattern = r'<programme[^>]+channel="DMAX".*?</programme>'
-        dmax_matches = re.findall(dmax_pattern, xml_rich, flags=re.DOTALL)
+        print("EPG indiriliyor...")
+        resp = requests.get(main_url, timeout=30)
+        with gzip.GzipFile(fileobj=io.BytesIO(resp.content)) as f:
+            xml_content = f.read().decode('utf-8')
         
-        dmax_data = ""
-        for m in dmax_matches:
-            # İsmi DMAX.HD.tr yap ve saati 3 saat ileri al
-            fixed = m.replace('channel="DMAX"', 'channel="DMAX.HD.tr"')
-            fixed = offset_time(fixed, 3) 
-            dmax_data += fixed + "\n"
+        # 1. FOX -> NOW Değişimi
+        xml_content = xml_content.replace('id="FOX.HD.tr"', 'id="NOW.HD.tr"')
+        xml_content = xml_content.replace('>FOX HD<', '>NOW HD<')
+        xml_content = xml_content.replace('channel="FOX.HD.tr"', 'channel="NOW.HD.tr"')
 
-        # --- FOX -> NOW DÖNÜŞÜMÜ ---
-        xml_main = xml_main.replace('id="FOX.HD.tr"', 'id="NOW.HD.tr"').replace('channel="FOX.HD.tr"', 'channel="NOW.HD.tr"')
+        # 2. Bozuk DMAX verilerini temizle
+        print("Bozuk DMAX verileri siliniyor...")
+        xml_content = re.sub(r'<programme[^>]+channel="DMAX\.HD\.tr".*?</programme>', '', xml_content, flags=re.DOTALL)
         
-        # --- ÇAKIŞMA ENGELLEME ---
-        # Ana listede (TR1) DMAX verisi varsa sil ki 'çift program' görünmesin
-        xml_main = re.sub(r'<programme[^>]+channel="DMAX.HD.tr".*?</programme>', '', xml_main, flags=re.DOTALL)
+        # 3. Gerçek DMAX verilerini çek ve ekle
+        print("DMAX resmi sitesinden güncel veriler alınıyor...")
+        real_dmax_xml = get_real_dmax()
+        
+        # Verileri </tv> etiketinden hemen önceye yapıştır
+        xml_content = xml_content.replace('</tv>', real_dmax_xml + '\n</tv>')
 
-        # --- BİRLEŞTİRME ---
-        # Hazırladığımız temiz DMAX verisini ana dosyanın sonuna ekle
-        final_xml = xml_main.replace("</tv>", dmax_data + "</tv>")
-
-        # DOSYAYI KAYDET (Karakter sorunu olmaması için utf-8-sig)
-        with open("epg.xml", "w", encoding="utf-8-sig") as f:
-            f.write(final_xml)
+        with open("epg.xml", "w", encoding="utf-8") as f:
+            f.write(xml_content)
             
-        print("--- BAŞARILI: Tüm düzenlemeler tek dosyada birleşti! ---")
+        print("İşlem Başarılı! NOW güncellendi, DMAX tamir edildi.")
 
     except Exception as e:
-        print(f"Hata oluştu: {e}")
+        print(f"Hata: {e}")
 
-# 3. KODU ÇALIŞTIRAN KISIM (EKSİKSİZ)
 if __name__ == "__main__":
     update_epg()
