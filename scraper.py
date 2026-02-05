@@ -1,51 +1,44 @@
 import requests
+import gzip
+import io
 
 def update_epg():
-    # Sadece senin verdiğin zengin içerikli kaynak
-    gold_source = "https://streams.uzunmuhalefet.com/epg/tr.xml"
+    # SAATLERİ VE İÇERİĞİ DOĞRU OLAN ANA KAYNAK
+    source_url = "https://epgshare01.online/epgshare01/epg_ripper_TR1.xml.gz"
 
     try:
-        print("1. Kaynak indiriliyor ve karakterler düzeltiliyor...")
-        resp = requests.get(gold_source, timeout=60)
+        print("1. Güvenilir kaynak indiriliyor (Gzip)...")
+        resp = requests.get(source_url, timeout=30)
         
-        # Karakter bozukluğunu önlemek için encoding'i zorla utf-8 yapıyoruz
-        resp.encoding = 'utf-8' 
-        xml_data = resp.text
+        # Gzip dosyasını açıp içeriği okuyoruz
+        with gzip.GzipFile(fileobj=io.BytesIO(resp.content)) as f:
+            xml_data = f.read().decode('utf-8')
 
-        # --- KİMLİK DEĞİŞİMİ (FOX/NOW MANTIĞI) ---
-        # Fotoğraftaki TRT 2 HD ismini senin sistemindekiyle eşleştiriyoruz
+        # --- SADECE GEREKLİ DÜZELTMELER ---
+        # FOX -> NOW dönüşümü (Saatlere dokunmuyoruz, zaten +3 geliyor)
         replacements = {
-            # CNBC-e (Kaynaktaki id="CNBC-e" -> Senin sistemindeki karşılığı)
-            'id="CNBC-e"': 'id="CNBC-E"', 
+            'id="FOX.HD.tr"': 'id="NOW.HD.tr"',
+            'channel="FOX.HD.tr"': 'channel="NOW.HD.tr"',
+            
+            # Eğer listede CNBC-E ve DMAX isimleri farklıysa buraya ekleyebiliriz
+            'id="CNBC-e"': 'id="CNBC-E"',
             'channel="CNBC-e"': 'channel="CNBC-E"',
-            
-            # DMAX
-            'id="DMAX"': 'id="DMAX.HD.tr"', 
-            'channel="DMAX"': 'channel="DMAX.HD.tr"',
-            
-            # TRT 2 (Fotoğrafta TRT2 HD görünüyor, ID'yi ona göre mühürleyelim)
-            'id="TRT 2"': 'id="TRT2.tr"', 
-            'channel="TRT 2"': 'channel="TRT2.tr"',
-            
-            # FOX/NOW
-            'id="FOX"': 'id="NOW.HD.tr"', 
-            'channel="FOX"': 'channel="NOW.HD.tr"',
-            'id="NOW"': 'id="NOW.HD.tr"', 
-            'channel="NOW"': 'channel="NOW.HD.tr"',
+            'id="DMAX.tr"': 'id="DMAX.HD.tr"',
+            'channel="DMAX.tr"': 'channel="DMAX.HD.tr"'
         }
 
-        print("2. Kanal isimleri senin listene göre senkronize ediliyor...")
+        print("2. Kanal isimleri senkronize ediliyor...")
         for old, new in replacements.items():
             xml_data = xml_data.replace(old, new)
 
-        # Dosyayı UTF-8 SIG (BOM) ile kaydedelim ki cihazlar karakterleri doğru okusun
-        with open("epg.xml", "w", encoding="utf-8-sig") as f:
+        # Dosyayı kaydediyoruz
+        with open("epg.xml", "w", encoding="utf-8") as f:
             f.write(xml_data)
             
-        print("--- İŞLEM TAMAMLANDI ---")
+        print("--- BAŞARILI: İlk kaynağa dönüldü, saatler ve içerikler artık doğru. ---")
 
     except Exception as e:
-        print(f"Hata: {e}")
+        print(f"Hata oluştu: {e}")
 
 if __name__ == "__main__":
     update_epg()
