@@ -42420,4 +42420,40 @@
   <channel id="CNBC-E">
     <display-name lang="tr">CNBC-E</display-name>
   </channel>
+  <programme start="20260205060000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">NASIL YAPILMIŞ? 07.00 ALASKA'NIN MİMARLARI 08.46 DOĞA EVİ UST</title>
+    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+  </programme>
+  <programme start="20260205094000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">ALASKA HAVAYOLLARI 10.40 KIRSALIN USTALARI 11.40 ED STAFFORD</title>
+    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+  </programme>
+  <programme start="20260205124000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">FIRTINANIN KALBİNDE 13.40 DEPO SAVAŞLARI</title>
+    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+  </programme>
+  <programme start="20260205143500 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">İKİNCİ EL KRALLARI 15.30 HURDA AVCILARI 16.30 TAMİRAT TADİLAT</title>
+    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+  </programme>
+  <programme start="20260205183000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">KIRSALIN USTALARI 19.30 ALTIN PEŞİNDE</title>
+    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+  </programme>
+  <programme start="20260205223000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">BERİNG BOĞAZI'NDA ALTIN 23.30 DENETİM ALTINDA 00.30 KIRSALIN</title>
+    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+  </programme>
+  <programme start="20260205013000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">ALTIN PEŞİNDE</title>
+    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+  </programme>
+  <programme start="20260205030500 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">ÇİFTE KURTULUŞ ŞİMDİ YAYINDA 04.35 HURDA BİZİM İŞİMİZ CANLI İ</title>
+    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+  </programme>
+  <programme start="20260205051500 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">NASIL YAPILMIŞ? İLGİNİZİ ÇEKEBİLİR ALTIN PEŞİNDE</title>
+    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+  </programme>
 </tv>
