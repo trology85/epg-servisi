@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿﻿<?xml version="1.0" encoding="UTF-8"?>
 <tv generator-info-name="none" generator-info-url="none">
   <channel id="KABLO.INFO.tr">
     <display-name lang="tr">KABLO INFO</display-name>
@@ -676,7 +676,7 @@
     <display-name lang="tr">24 TV HD</display-name>
     <url>http://www.turksatkablo.com.tr</url>
   </channel>
-  <channel id="DMAX.HD.tr">
+  <channel id="DMAX.tr">
     <display-name lang="tr">DMAX</display-name>
     <url>http://www.turksatkablo.com.tr</url>
   </channel>
@@ -5967,108 +5967,40 @@
   <programme start="20260206213000 +0300" stop="20260207000000 +0300" channel="EM.TV.tr">
     <title lang="tr">Cengiz Semercioğlu ile Bunu Konuşmak Lazım</title>
   </programme>
-  <programme start="20260204000000 +0300" stop="20260204030000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Belgesel</title>
-  </programme>
-  <programme start="20260204030000 +0300" stop="20260204070000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Klip</title>
-  </programme>
-  <programme start="20260204070000 +0300" stop="20260204090000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Belgesel</title>
-  </programme>
-  <programme start="20260204090000 +0300" stop="20260204120000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Klip</title>
-  </programme>
-  <programme start="20260204120000 +0300" stop="20260204140500 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Mevzu Ne</title>
-  </programme>
-  <programme start="20260204140500 +0300" stop="20260204160000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Gezi Planı</title>
-  </programme>
-  <programme start="20260204160000 +0300" stop="20260204180000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Avukat Mahmet Şah Çelik Ve Tuğba Gönan ile Bir Dava Bin Çözüm</title>
-  </programme>
-  <programme start="20260204180000 +0300" stop="20260204200000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">TMB Klip</title>
-  </programme>
-  <programme start="20260204200000 +0300" stop="20260204210000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Belgesel</title>
-  </programme>
-  <programme start="20260204210000 +0300" stop="20260204230000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Ana Haber</title>
-  </programme>
-  <programme start="20260204230000 +0300" stop="20260205000000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Gezi Planı</title>
-  </programme>
-  <programme start="20260205000000 +0300" stop="20260205030000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Belgesel</title>
-  </programme>
-  <programme start="20260205030000 +0300" stop="20260205070000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Klip</title>
-  </programme>
-  <programme start="20260205070000 +0300" stop="20260205090000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Belgesel</title>
-  </programme>
-  <programme start="20260205090000 +0300" stop="20260205120000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Klip</title>
-  </programme>
-  <programme start="20260205120000 +0300" stop="20260205140500 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Mevzu Ne</title>
-  </programme>
-  <programme start="20260205140500 +0300" stop="20260205170000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Gezi Planı</title>
-  </programme>
-  <programme start="20260205170000 +0300" stop="20260205180000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Belgesel</title>
-  </programme>
-  <programme start="20260205180000 +0300" stop="20260205190000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Klip</title>
-  </programme>
-  <programme start="20260205190000 +0300" stop="20260205200000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Belgesel</title>
-  </programme>
-  <programme start="20260205200000 +0300" stop="20260205210000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Ufuk Ağca ile Bi Ondan Bi Bundan</title>
-  </programme>
-  <programme start="20260205210000 +0300" stop="20260205230000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Ufuk Ağca ile Bi Ondan Bi Bundan</title>
-  </programme>
-  <programme start="20260205230000 +0300" stop="20260206000000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Gezi Planı</title>
-  </programme>
-  <programme start="20260206000000 +0300" stop="20260206030000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Belgesel</title>
-  </programme>
-  <programme start="20260206030000 +0300" stop="20260206070000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Klip</title>
-  </programme>
-  <programme start="20260206070000 +0300" stop="20260206090000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Belgesel</title>
-  </programme>
-  <programme start="20260206090000 +0300" stop="20260206120000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Klip</title>
-  </programme>
-  <programme start="20260206120000 +0300" stop="20260206140500 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Mevzu Ne</title>
-  </programme>
-  <programme start="20260206140500 +0300" stop="20260206170000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Gezi Planı</title>
-  </programme>
-  <programme start="20260206170000 +0300" stop="20260206180000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Belgesel</title>
-  </programme>
-  <programme start="20260206180000 +0300" stop="20260206200000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">TMB Klip</title>
-  </programme>
-  <programme start="20260206200000 +0300" stop="20260206210000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Belgesel</title>
-  </programme>
-  <programme start="20260206210000 +0300" stop="20260206230000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Ana Haber</title>
-  </programme>
-  <programme start="20260206230000 +0300" stop="20260207000000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">Gezi Planı</title>
-  </programme>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <programme start="20260204000000 +0300" stop="20260204004500 +0300" channel="TVT.tr">
     <title lang="tr">Şeflerin Mutfağı</title>
   </programme>
@@ -41601,283 +41533,283 @@
   <programme start="20260206230000 +0300" stop="20260207010000 +0300" channel="24.TV.HD.tr">
     <title lang="tr">Moderatör Gece</title>
   </programme>
-  <programme start="20260204000000 +0300" stop="20260204003000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204000000 +0300" stop="20260204003000 +0300" channel="DMAX.tr">
     <title lang="tr">Denetim Altında</title>
   </programme>
-  <programme start="20260204003000 +0300" stop="20260204013000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204003000 +0300" stop="20260204013000 +0300" channel="DMAX.tr">
     <title lang="tr">Kırsalın Ustaları</title>
   </programme>
-  <programme start="20260204013000 +0300" stop="20260204022000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204013000 +0300" stop="20260204022000 +0300" channel="DMAX.tr">
     <title lang="tr">Ed Stafford ile Cesaret İsteyen Ritüeller</title>
   </programme>
-  <programme start="20260204022000 +0300" stop="20260204030500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204022000 +0300" stop="20260204030500 +0300" channel="DMAX.tr">
     <title lang="tr">Fırtınanın Kalbinde</title>
   </programme>
-  <programme start="20260204030500 +0300" stop="20260204035000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204030500 +0300" stop="20260204035000 +0300" channel="DMAX.tr">
     <title lang="tr">Çifte Kurtuluş</title>
   </programme>
-  <programme start="20260204035000 +0300" stop="20260204043500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204035000 +0300" stop="20260204043500 +0300" channel="DMAX.tr">
     <title lang="tr">Çifte Kurtuluş</title>
   </programme>
-  <programme start="20260204043500 +0300" stop="20260204045500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204043500 +0300" stop="20260204045500 +0300" channel="DMAX.tr">
     <title lang="tr">Hurda Bizim İşimiz</title>
   </programme>
-  <programme start="20260204045500 +0300" stop="20260204051500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204045500 +0300" stop="20260204051500 +0300" channel="DMAX.tr">
     <title lang="tr">Hurda Bizim İşimiz</title>
   </programme>
-  <programme start="20260204051500 +0300" stop="20260204053500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204051500 +0300" stop="20260204053500 +0300" channel="DMAX.tr">
     <title lang="tr">Nasıl Yapılmış?</title>
   </programme>
-  <programme start="20260204053500 +0300" stop="20260204060000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204053500 +0300" stop="20260204060000 +0300" channel="DMAX.tr">
     <title lang="tr">Nasıl Yapılmış?</title>
   </programme>
-  <programme start="20260204060000 +0300" stop="20260204063000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204060000 +0300" stop="20260204063000 +0300" channel="DMAX.tr">
     <title lang="tr">Nasıl Yapılmış?</title>
   </programme>
-  <programme start="20260204063000 +0300" stop="20260204070000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204063000 +0300" stop="20260204070000 +0300" channel="DMAX.tr">
     <title lang="tr">Nasıl Yapılmış?</title>
   </programme>
-  <programme start="20260204070000 +0300" stop="20260204075300 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204070000 +0300" stop="20260204075300 +0300" channel="DMAX.tr">
     <title lang="tr">Alaska'nın Mimarları</title>
   </programme>
-  <programme start="20260204075300 +0300" stop="20260204084600 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204075300 +0300" stop="20260204084600 +0300" channel="DMAX.tr">
     <title lang="tr">Alaska'nın Mimarları</title>
   </programme>
-  <programme start="20260204084600 +0300" stop="20260204094000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204084600 +0300" stop="20260204094000 +0300" channel="DMAX.tr">
     <title lang="tr">Doğa Evi Ustaları</title>
   </programme>
-  <programme start="20260204094000 +0300" stop="20260204104000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204094000 +0300" stop="20260204104000 +0300" channel="DMAX.tr">
     <title lang="tr">Alaska Hava Yolları</title>
   </programme>
-  <programme start="20260204104000 +0300" stop="20260204114000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204104000 +0300" stop="20260204114000 +0300" channel="DMAX.tr">
     <title lang="tr">Kırsalın Ustaları</title>
   </programme>
-  <programme start="20260204114000 +0300" stop="20260204124000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204114000 +0300" stop="20260204124000 +0300" channel="DMAX.tr">
     <title lang="tr">Ed Stafford ile Cesaret İsteyen Ritüeller</title>
   </programme>
-  <programme start="20260204124000 +0300" stop="20260204134000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204124000 +0300" stop="20260204134000 +0300" channel="DMAX.tr">
     <title lang="tr">Fırtınanın Kalbinde</title>
   </programme>
-  <programme start="20260204134000 +0300" stop="20260204140700 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204134000 +0300" stop="20260204140700 +0300" channel="DMAX.tr">
     <title lang="tr">Depo Savaşları Teksas</title>
   </programme>
-  <programme start="20260204140700 +0300" stop="20260204143500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204140700 +0300" stop="20260204143500 +0300" channel="DMAX.tr">
     <title lang="tr">Depo Savaşları Teksas</title>
   </programme>
-  <programme start="20260204143500 +0300" stop="20260204150200 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204143500 +0300" stop="20260204150200 +0300" channel="DMAX.tr">
     <title lang="tr">İkinci El Kralları</title>
   </programme>
-  <programme start="20260204150200 +0300" stop="20260204153000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204150200 +0300" stop="20260204153000 +0300" channel="DMAX.tr">
     <title lang="tr">İkinci El Kralları</title>
   </programme>
-  <programme start="20260204153000 +0300" stop="20260204163000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204153000 +0300" stop="20260204163000 +0300" channel="DMAX.tr">
     <title lang="tr">Hurda Avcıları</title>
   </programme>
-  <programme start="20260204163000 +0300" stop="20260204173000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204163000 +0300" stop="20260204173000 +0300" channel="DMAX.tr">
     <title lang="tr">Tamirat Tadilat</title>
   </programme>
-  <programme start="20260204173000 +0300" stop="20260204183000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204173000 +0300" stop="20260204183000 +0300" channel="DMAX.tr">
     <title lang="tr">Tamirat Tadilat</title>
   </programme>
-  <programme start="20260204183000 +0300" stop="20260204193000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204183000 +0300" stop="20260204193000 +0300" channel="DMAX.tr">
     <title lang="tr">Kırsalın Ustaları</title>
   </programme>
-  <programme start="20260204193000 +0300" stop="20260204203000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204193000 +0300" stop="20260204203000 +0300" channel="DMAX.tr">
     <title lang="tr">Altın Peşinde: Köpüklü Sular</title>
   </programme>
-  <programme start="20260204203000 +0300" stop="20260204213000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204203000 +0300" stop="20260204213000 +0300" channel="DMAX.tr">
     <title lang="tr">Altın Peşinde: Köpüklü Sular</title>
   </programme>
-  <programme start="20260204213000 +0300" stop="20260204223000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204213000 +0300" stop="20260204223000 +0300" channel="DMAX.tr">
     <title lang="tr">Altın Peşinde: Köpüklü Sular</title>
   </programme>
-  <programme start="20260204223000 +0300" stop="20260204233000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204223000 +0300" stop="20260204233000 +0300" channel="DMAX.tr">
     <title lang="tr">Bering Boğazı'nda Altın</title>
   </programme>
-  <programme start="20260204233000 +0300" stop="20260205000000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260204233000 +0300" stop="20260205000000 +0300" channel="DMAX.tr">
     <title lang="tr">Denetim Altında</title>
   </programme>
-  <programme start="20260205000000 +0300" stop="20260205003000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205000000 +0300" stop="20260205003000 +0300" channel="DMAX.tr">
     <title lang="tr">Denetim Altında</title>
   </programme>
-  <programme start="20260205003000 +0300" stop="20260205013000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205003000 +0300" stop="20260205013000 +0300" channel="DMAX.tr">
     <title lang="tr">Kırsalın Ustaları</title>
   </programme>
-  <programme start="20260205013000 +0300" stop="20260205022000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205013000 +0300" stop="20260205022000 +0300" channel="DMAX.tr">
     <title lang="tr">Altın Peşinde: Köpüklü Sular</title>
   </programme>
-  <programme start="20260205022000 +0300" stop="20260205030500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205022000 +0300" stop="20260205030500 +0300" channel="DMAX.tr">
     <title lang="tr">Altın Peşinde: Köpüklü Sular</title>
   </programme>
-  <programme start="20260205030500 +0300" stop="20260205035000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205030500 +0300" stop="20260205035000 +0300" channel="DMAX.tr">
     <title lang="tr">Çifte Kurtuluş</title>
   </programme>
-  <programme start="20260205035000 +0300" stop="20260205043500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205035000 +0300" stop="20260205043500 +0300" channel="DMAX.tr">
     <title lang="tr">Çifte Kurtuluş</title>
   </programme>
-  <programme start="20260205043500 +0300" stop="20260205045500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205043500 +0300" stop="20260205045500 +0300" channel="DMAX.tr">
     <title lang="tr">Hurda Bizim İşimiz</title>
   </programme>
-  <programme start="20260205045500 +0300" stop="20260205051500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205045500 +0300" stop="20260205051500 +0300" channel="DMAX.tr">
     <title lang="tr">Hurda Bizim İşimiz</title>
   </programme>
-  <programme start="20260205051500 +0300" stop="20260205053500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205051500 +0300" stop="20260205053500 +0300" channel="DMAX.tr">
     <title lang="tr">Nasıl Yapılmış?</title>
   </programme>
-  <programme start="20260205053500 +0300" stop="20260205060000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205053500 +0300" stop="20260205060000 +0300" channel="DMAX.tr">
     <title lang="tr">Nasıl Yapılmış?</title>
   </programme>
-  <programme start="20260205060000 +0300" stop="20260205063000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205060000 +0300" stop="20260205063000 +0300" channel="DMAX.tr">
     <title lang="tr">Nasıl Yapılmış?</title>
   </programme>
-  <programme start="20260205063000 +0300" stop="20260205070000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205063000 +0300" stop="20260205070000 +0300" channel="DMAX.tr">
     <title lang="tr">Nasıl Yapılmış?</title>
   </programme>
-  <programme start="20260205070000 +0300" stop="20260205075300 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205070000 +0300" stop="20260205075300 +0300" channel="DMAX.tr">
     <title lang="tr">Alaska'nın Mimarları</title>
   </programme>
-  <programme start="20260205075300 +0300" stop="20260205084600 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205075300 +0300" stop="20260205084600 +0300" channel="DMAX.tr">
     <title lang="tr">Alaska'nın Mimarları</title>
   </programme>
-  <programme start="20260205084600 +0300" stop="20260205094000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205084600 +0300" stop="20260205094000 +0300" channel="DMAX.tr">
     <title lang="tr">Doğa Evi Ustaları</title>
   </programme>
-  <programme start="20260205094000 +0300" stop="20260205104000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205094000 +0300" stop="20260205104000 +0300" channel="DMAX.tr">
     <title lang="tr">Alaska Hava Yolları</title>
   </programme>
-  <programme start="20260205104000 +0300" stop="20260205114000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205104000 +0300" stop="20260205114000 +0300" channel="DMAX.tr">
     <title lang="tr">Kırsalın Ustaları</title>
   </programme>
-  <programme start="20260205114000 +0300" stop="20260205124000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205114000 +0300" stop="20260205124000 +0300" channel="DMAX.tr">
     <title lang="tr">Altın Peşinde: Köpüklü Sular</title>
   </programme>
-  <programme start="20260205124000 +0300" stop="20260205134000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205124000 +0300" stop="20260205134000 +0300" channel="DMAX.tr">
     <title lang="tr">Altın Peşinde: Köpüklü Sular</title>
   </programme>
-  <programme start="20260205134000 +0300" stop="20260205140700 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205134000 +0300" stop="20260205140700 +0300" channel="DMAX.tr">
     <title lang="tr">Depo Savaşları Teksas</title>
   </programme>
-  <programme start="20260205140700 +0300" stop="20260205143500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205140700 +0300" stop="20260205143500 +0300" channel="DMAX.tr">
     <title lang="tr">Depo Savaşları Teksas</title>
   </programme>
-  <programme start="20260205143500 +0300" stop="20260205150200 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205143500 +0300" stop="20260205150200 +0300" channel="DMAX.tr">
     <title lang="tr">İkinci El Kralları</title>
   </programme>
-  <programme start="20260205150200 +0300" stop="20260205153000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205150200 +0300" stop="20260205153000 +0300" channel="DMAX.tr">
     <title lang="tr">İkinci El Kralları</title>
   </programme>
-  <programme start="20260205153000 +0300" stop="20260205163000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205153000 +0300" stop="20260205163000 +0300" channel="DMAX.tr">
     <title lang="tr">Hurda Avcıları</title>
   </programme>
-  <programme start="20260205163000 +0300" stop="20260205173000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205163000 +0300" stop="20260205173000 +0300" channel="DMAX.tr">
     <title lang="tr">Tamirat Tadilat</title>
   </programme>
-  <programme start="20260205173000 +0300" stop="20260205183000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205173000 +0300" stop="20260205183000 +0300" channel="DMAX.tr">
     <title lang="tr">Tamirat Tadilat</title>
   </programme>
-  <programme start="20260205183000 +0300" stop="20260205193000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205183000 +0300" stop="20260205193000 +0300" channel="DMAX.tr">
     <title lang="tr">Kırsalın Ustaları</title>
   </programme>
-  <programme start="20260205193000 +0300" stop="20260205203000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205193000 +0300" stop="20260205203000 +0300" channel="DMAX.tr">
     <title lang="tr">Kamyonet Hanedanı</title>
   </programme>
-  <programme start="20260205203000 +0300" stop="20260205213000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205203000 +0300" stop="20260205213000 +0300" channel="DMAX.tr">
     <title lang="tr">Kaza Müfettişi</title>
   </programme>
-  <programme start="20260205213000 +0300" stop="20260205233000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205213000 +0300" stop="20260205233000 +0300" channel="DMAX.tr">
     <title lang="tr">Kırsalda Yaşamak Zor</title>
   </programme>
-  <programme start="20260205233000 +0300" stop="20260206000000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260205233000 +0300" stop="20260206000000 +0300" channel="DMAX.tr">
     <title lang="tr">Denetim Altında</title>
   </programme>
-  <programme start="20260206000000 +0300" stop="20260206003000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206000000 +0300" stop="20260206003000 +0300" channel="DMAX.tr">
     <title lang="tr">Denetim Altında</title>
   </programme>
-  <programme start="20260206003000 +0300" stop="20260206013000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206003000 +0300" stop="20260206013000 +0300" channel="DMAX.tr">
     <title lang="tr">Kırsalın Ustaları</title>
   </programme>
-  <programme start="20260206013000 +0300" stop="20260206022000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206013000 +0300" stop="20260206022000 +0300" channel="DMAX.tr">
     <title lang="tr">Kamyonet Hanedanı</title>
   </programme>
-  <programme start="20260206022000 +0300" stop="20260206030500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206022000 +0300" stop="20260206030500 +0300" channel="DMAX.tr">
     <title lang="tr">Kaza Müfettişi</title>
   </programme>
-  <programme start="20260206030500 +0300" stop="20260206035000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206030500 +0300" stop="20260206035000 +0300" channel="DMAX.tr">
     <title lang="tr">Çifte Kurtuluş</title>
   </programme>
-  <programme start="20260206035000 +0300" stop="20260206043500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206035000 +0300" stop="20260206043500 +0300" channel="DMAX.tr">
     <title lang="tr">Çifte Kurtuluş</title>
   </programme>
-  <programme start="20260206043500 +0300" stop="20260206045500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206043500 +0300" stop="20260206045500 +0300" channel="DMAX.tr">
     <title lang="tr">Hurda Bizim İşimiz</title>
   </programme>
-  <programme start="20260206045500 +0300" stop="20260206051500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206045500 +0300" stop="20260206051500 +0300" channel="DMAX.tr">
     <title lang="tr">Hurda Bizim İşimiz</title>
   </programme>
-  <programme start="20260206051500 +0300" stop="20260206053500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206051500 +0300" stop="20260206053500 +0300" channel="DMAX.tr">
     <title lang="tr">Nasıl Yapılmış?</title>
   </programme>
-  <programme start="20260206053500 +0300" stop="20260206060000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206053500 +0300" stop="20260206060000 +0300" channel="DMAX.tr">
     <title lang="tr">Nasıl Yapılmış?</title>
   </programme>
-  <programme start="20260206060000 +0300" stop="20260206063000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206060000 +0300" stop="20260206063000 +0300" channel="DMAX.tr">
     <title lang="tr">Nasıl Yapılmış?</title>
   </programme>
-  <programme start="20260206063000 +0300" stop="20260206070000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206063000 +0300" stop="20260206070000 +0300" channel="DMAX.tr">
     <title lang="tr">Nasıl Yapılmış?</title>
   </programme>
-  <programme start="20260206070000 +0300" stop="20260206075300 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206070000 +0300" stop="20260206075300 +0300" channel="DMAX.tr">
     <title lang="tr">Alaska'nın Mimarları</title>
   </programme>
-  <programme start="20260206075300 +0300" stop="20260206084600 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206075300 +0300" stop="20260206084600 +0300" channel="DMAX.tr">
     <title lang="tr">Alaska'nın Mimarları</title>
   </programme>
-  <programme start="20260206084600 +0300" stop="20260206094000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206084600 +0300" stop="20260206094000 +0300" channel="DMAX.tr">
     <title lang="tr">Doğa Evi Ustaları</title>
   </programme>
-  <programme start="20260206094000 +0300" stop="20260206104000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206094000 +0300" stop="20260206104000 +0300" channel="DMAX.tr">
     <title lang="tr">Alaska Hava Yolları</title>
   </programme>
-  <programme start="20260206104000 +0300" stop="20260206114000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206104000 +0300" stop="20260206114000 +0300" channel="DMAX.tr">
     <title lang="tr">Kırsalın Ustaları</title>
   </programme>
-  <programme start="20260206114000 +0300" stop="20260206124000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206114000 +0300" stop="20260206124000 +0300" channel="DMAX.tr">
     <title lang="tr">Kamyonet Hanedanı</title>
   </programme>
-  <programme start="20260206124000 +0300" stop="20260206134000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206124000 +0300" stop="20260206134000 +0300" channel="DMAX.tr">
     <title lang="tr">Kaza Müfettişi</title>
   </programme>
-  <programme start="20260206134000 +0300" stop="20260206140700 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206134000 +0300" stop="20260206140700 +0300" channel="DMAX.tr">
     <title lang="tr">Depo Savaşları Teksas</title>
   </programme>
-  <programme start="20260206140700 +0300" stop="20260206143500 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206140700 +0300" stop="20260206143500 +0300" channel="DMAX.tr">
     <title lang="tr">Depo Savaşları Teksas</title>
   </programme>
-  <programme start="20260206143500 +0300" stop="20260206150200 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206143500 +0300" stop="20260206150200 +0300" channel="DMAX.tr">
     <title lang="tr">İkinci El Kralları</title>
   </programme>
-  <programme start="20260206150200 +0300" stop="20260206153000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206150200 +0300" stop="20260206153000 +0300" channel="DMAX.tr">
     <title lang="tr">İkinci El Kralları</title>
   </programme>
-  <programme start="20260206153000 +0300" stop="20260206163000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206153000 +0300" stop="20260206163000 +0300" channel="DMAX.tr">
     <title lang="tr">Hurda Avcıları</title>
   </programme>
-  <programme start="20260206163000 +0300" stop="20260206173000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206163000 +0300" stop="20260206173000 +0300" channel="DMAX.tr">
     <title lang="tr">Tamirat Tadilat</title>
   </programme>
-  <programme start="20260206173000 +0300" stop="20260206183000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206173000 +0300" stop="20260206183000 +0300" channel="DMAX.tr">
     <title lang="tr">Tamirat Tadilat</title>
   </programme>
-  <programme start="20260206183000 +0300" stop="20260206193000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206183000 +0300" stop="20260206193000 +0300" channel="DMAX.tr">
     <title lang="tr">Kırsalın Ustaları</title>
   </programme>
-  <programme start="20260206193000 +0300" stop="20260206213000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206193000 +0300" stop="20260206213000 +0300" channel="DMAX.tr">
     <title lang="tr">Dünya Dışı</title>
   </programme>
-  <programme start="20260206213000 +0300" stop="20260206233000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206213000 +0300" stop="20260206233000 +0300" channel="DMAX.tr">
     <title lang="tr">Dünya Dışı</title>
   </programme>
-  <programme start="20260206233000 +0300" stop="20260207000000 +0300" channel="DMAX.HD.tr">
+  <programme start="20260206233000 +0300" stop="20260207000000 +0300" channel="DMAX.tr">
     <title lang="tr">Denetim Altında</title>
   </programme>
   <programme start="20260204094500 +0300" stop="20260204100000 +0300" channel="Beinsports.tr">
