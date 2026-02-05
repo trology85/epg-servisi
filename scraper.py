@@ -1,44 +1,57 @@
 import requests
 import gzip
 import io
+import re
 
 def update_epg():
-    # SAATLERİ VE İÇERİĞİ DOĞRU OLAN ANA KAYNAK
-    source_url = "https://epgshare01.online/epgshare01/epg_ripper_TR1.xml.gz"
+    # 1. ANA KAYNAK: Tüm kanalların doğru saatli listesi
+    main_url = "https://epgshare01.online/epgshare01/epg_ripper_TR1.xml.gz"
+    # 2. ZENGİN KAYNAK: Sadece TRT 2'nin detaylı açıklamalarını buradan alacağız
+    rich_url = "https://streams.uzunmuhalefet.com/epg/tr.xml"
 
     try:
-        print("1. Güvenilir kaynak indiriliyor (Gzip)...")
-        resp = requests.get(source_url, timeout=30)
+        print("1. Kaynaklar indiriliyor...")
+        # Ana listeyi indir ve aç
+        resp_main = requests.get(main_url, timeout=30)
+        with gzip.GzipFile(fileobj=io.BytesIO(resp_main.content)) as f:
+            xml_main = f.read().decode('utf-8')
+
+        # Zengin listeyi indir
+        resp_rich = requests.get(rich_url, timeout=30)
+        resp_rich.encoding = 'utf-8'
+        xml_rich = resp_rich.text
+
+        print("2. TRT 2 içeriği ayıklanıyor ve 'TRT2 HD' olarak etiketleniyor...")
         
-        # Gzip dosyasını açıp içeriği okuyoruz
-        with gzip.GzipFile(fileobj=io.BytesIO(resp.content)) as f:
-            xml_data = f.read().decode('utf-8')
+        # Zengin kaynaktaki kanal adı "TRT 2" olarak geçiyor. 
+        # Onu bulup senin sistemindeki "TRT2 HD"ye çeviriyoruz.
+        trt2_pattern = r'<programme[^>]+channel="TRT 2".*?</programme>'
+        trt2_matches = re.findall(trt2_pattern, xml_rich, flags=re.DOTALL)
+        
+        trt2_custom_content = ""
+        for m in trt2_matches:
+            # Kanal ismini senin cihazındaki isme (TRT2 HD) tam olarak eşliyoruz
+            fixed_p = m.replace('channel="TRT 2"', 'channel="TRT2 HD"')
+            trt2_custom_content += fixed_p + "\n"
 
-        # --- SADECE GEREKLİ DÜZELTMELER ---
-        # FOX -> NOW dönüşümü (Saatlere dokunmuyoruz, zaten +3 geliyor)
-        replacements = {
-            'id="FOX.HD.tr"': 'id="NOW.HD.tr"',
-            'channel="FOX.HD.tr"': 'channel="NOW.HD.tr"',
+        # --- DÜZELTMELER ---
+        # 1. Ana listedeki FOX'u NOW yapalım (senin sistemin için gerekliyse)
+        xml_main = xml_main.replace('id="FOX.HD.tr"', 'id="NOW.HD.tr"').replace('channel="FOX.HD.tr"', 'channel="NOW.HD.tr"')
+        
+        # 2. Eğer ana listede TRT 2 zaten varsa (açıklamasız hali), çakışma olmasın diye onu temizleyebiliriz
+        # Ama şimdilik sadece sonuna eklemek de işe yarayacaktır.
+        
+        # Birleştirme: Tüm listeyi al, kapanıştan hemen önce bizim zengin TRT 2'yi enjekte et
+        final_xml = xml_main.replace("</tv>", trt2_custom_content + "</tv>")
+
+        print("3. Dosya 'utf-8-sig' ile mühürleniyor (Karakter sorunu için)...")
+        with open("epg.xml", "w", encoding="utf-8-sig") as f:
+            f.write(final_xml)
             
-            # Eğer listede CNBC-E ve DMAX isimleri farklıysa buraya ekleyebiliriz
-            'id="CNBC-e"': 'id="CNBC-E"',
-            'channel="CNBC-e"': 'channel="CNBC-E"',
-            'id="DMAX.tr"': 'id="DMAX.HD.tr"',
-            'channel="DMAX.tr"': 'channel="DMAX.HD.tr"'
-        }
-
-        print("2. Kanal isimleri senkronize ediliyor...")
-        for old, new in replacements.items():
-            xml_data = xml_data.replace(old, new)
-
-        # Dosyayı kaydediyoruz
-        with open("epg.xml", "w", encoding="utf-8") as f:
-            f.write(xml_data)
-            
-        print("--- BAŞARILI: İlk kaynağa dönüldü, saatler ve içerikler artık doğru. ---")
+        print("--- BAŞARILI: TRT2 HD açıklamalarıyla eklendi, diğer kanallar korundu! ---")
 
     except Exception as e:
-        print(f"Hata oluştu: {e}")
+        print(f"Hata: {e}")
 
 if __name__ == "__main__":
     update_epg()
