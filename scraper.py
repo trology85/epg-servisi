@@ -1,94 +1,88 @@
 import requests
-from bs4 import BeautifulSoup
 import gzip
 import io
 import re
 from datetime import datetime
+import xml.etree.ElementTree as ET
 
-def get_cnbce_final_attempt():
-    """CNBC-e için Mynet TV Rehberi üzerinden veri çeker."""
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
-    # Alternatif Kaynak 2: Mynet TV Rehberi
-    url = "https://tvrehberi.mynet.com/cnbc-e-yayin-akisi/"
-    try:
-        r = requests.get(url, headers=headers, timeout=20)
-        r.encoding = 'utf-8'
-        soup = BeautifulSoup(r.text, 'html.parser')
-        programs = []
-        
-        # Mynet yapısı: .tv-guide-list içindeki öğeler
-        items = soup.select('.tv-guide-list-item') or soup.find_all('li', class_=re.compile(r'item'))
-        for item in items:
-            time_el = item.select_one('.time') or item.find(string=re.compile(r'^\d{2}:\d{2}$'))
-            title_el = item.select_one('.title') or item.find(['h3', 'h4', 'span'])
-            
-            if time_el and title_el:
-                programs.append({
-                    'time': time_el.get_text(strip=True),
-                    'title': title_el.get_text(strip=True)
-                })
-        
-        # Eğer yukarıdaki çalışmazsa Regex ile tüm sayfayı tara (CNBC-E için son çare)
-        if not programs:
-            text = soup.get_text(" | ")
-            matches = re.findall(r'(\d{2}:\d{2})\s*\|\s*([^|]{3,50})', text)
-            for m in matches:
-                if not any(x in m[1] for x in ["Giriş", "Üye", "Yayın"]):
-                    programs.append({'time': m[0], 'title': m[1].strip()})
-                    
-        return programs
-    except:
-        return []
-
-def get_dmax_data():
-    """DMAX için çalışan mevcut yapıyı korur."""
+def get_programmes_from_external_xml(source_url, target_channel_id):
+    """Büyük bir EPG dosyasını indirir ve içinden belirli bir kanalı ayıklar."""
+    print(f"   - {target_channel_id} için {source_url} taranıyor...")
     headers = {"User-Agent": "Mozilla/5.0"}
     try:
-        r = requests.get("https://www.dmax.com.tr/yayin-akisi", headers=headers, timeout=20)
-        soup = BeautifulSoup(r.text, 'html.parser')
-        text_content = soup.get_text(" | ", strip=True)
-        matches = re.findall(r'(\d{2}[:\.]\d{2})\s*\|\s*([^|]{3,60})', text_content)
-        return [{'time': m[0].replace('.', ':'), 'title': m[1].strip()} for m in matches]
-    except:
+        resp = requests.get(source_url, timeout=40)
+        # Eğer dosya sıkıştırılmışsa (.gz) aç
+        if source_url.endswith('.gz'):
+            with gzip.GzipFile(fileobj=io.BytesIO(resp.content)) as f:
+                content = f.read().decode('utf-8')
+        else:
+            content = resp.text
+        
+        # Regex ile sadece bu kanala ait programları söküp alalım
+        # Bu yöntem XML parse etmekten çok daha hızlıdır
+        pattern = f'<programme[^>]+channel="{re.escape(target_channel_id)}".*?</programme>'
+        matches = re.findall(pattern, content, flags=re.DOTALL)
+        return matches
+    except Exception as e:
+        print(f"   ! Kaynak hatası: {e}")
         return []
 
 def update_epg():
+    # Ana EPG dosyamız (Senin kullandığın)
     main_url = "https://epgshare01.online/epgshare01/epg_ripper_TR1.xml.gz"
+    
+    # CNBC-e ve DMAX'i bulabileceğimiz alternatif dev havuzlar
+    alt_sources = [
+        "https://iptv-org.github.io/epg/guides/tr/beintv.com.epg.xml",
+        "https://raw.githubusercontent.com/LITUATUI/GUIA-TV/master/guia.xml.gz",
+        "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz"
+    ]
+
     try:
-        print("1. Kaynak EPG indiriliyor...")
+        print("1. Ana EPG indiriliyor...")
         resp = requests.get(main_url, timeout=30)
         with gzip.GzipFile(fileobj=io.BytesIO(resp.content)) as f:
             xml_content = f.read().decode('utf-8')
 
-        # NOW Değişimi
+        # FOX -> NOW Değişimi
         xml_content = xml_content.replace('id="FOX.HD.tr"', 'id="NOW.HD.tr"')
         xml_content = xml_content.replace('channel="FOX.HD.tr"', 'channel="NOW.HD.tr"')
 
         # --- TEMİZLİK ---
+        # Mevcut (boş veya hatalı) DMAX ve CNBC-e verilerini siliyoruz
         xml_content = re.sub(r'<programme[^>]+channel="DMAX\.HD\.tr".*?</programme>', '', xml_content, flags=re.DOTALL)
         xml_content = re.sub(r'<programme[^>]+channel="CNBC-E".*?</programme>', '', xml_content, flags=re.DOTALL)
 
-        print("2. Veriler toplanıyor...")
-        dmax_list = get_dmax_data()
-        cnbce_list = get_cnbce_final_attempt()
+        print("2. Alternatif havuzlardan veri toplanıyor...")
+        
+        # CNBC-E ARAYIŞI
+        cnbce_programmes = []
+        for source in alt_sources:
+            # CNBC-e havuzlarda farklı ID'lerle olabilir, hepsini deneyelim
+            for possible_id in ["CNBC-e.tr", "CNBC-E", "CNBCE.tr"]:
+                found = get_programmes_from_external_xml(source, possible_id)
+                if found:
+                    # Bulunanları bizim kendi ID'mizle ("CNBC-E") değiştirerek ekle
+                    for p in found:
+                        p_fixed = re.sub(r'channel="[^"]+"', 'channel="CNBC-E"', p)
+                        cnbce_programmes.append(p_fixed)
+                    break
+            if cnbce_programmes: break
 
-        print(f"> DMAX: {len(dmax_list)} | CNBC-e: {len(cnbce_list)}")
+        # DMAX ARAYIŞI (Zaten çalışıyordu ama daha sağlam olsun diye havuzdan da bakıyoruz)
+        dmax_programmes = get_programmes_from_external_xml(main_url, "DMAX.HD.tr")
 
-        new_entries = ""
-        today = datetime.now().strftime("%Y%m%d")
+        print(f"> Sonuç: DMAX için {len(dmax_programmes)}, CNBC-e için {len(cnbce_programmes)} veri bulundu.")
 
-        for cid, data in [("DMAX.HD.tr", dmax_list), ("CNBC-E", cnbce_list)]:
+        # --- BİRLEŞTİRME ---
+        # Kanal tanımlarını garantiye al
+        for cid in ["DMAX.HD.tr", "CNBC-E"]:
             if f'id="{cid}"' not in xml_content:
                 xml_content = xml_content.replace('</tv>', f'  <channel id="{cid}">\n    <display-name lang="tr">{cid}</display-name>\n  </channel>\n</tv>')
-            
-            for p in data:
-                start = f"{today}{p['time'].replace(':', '')}00 +0300"
-                new_entries += f'  <programme start="{start}" channel="{cid}">\n'
-                new_entries += f'    <title lang="tr">{p["title"]}</title>\n'
-                new_entries += f'    <desc lang="tr">{cid} Program Akışı</desc>\n'
-                new_entries += f'  </programme>\n'
 
-        xml_content = xml_content.replace('</tv>', new_entries + '</tv>')
+        # Bulunan programları ekle
+        all_new = "\n".join(dmax_programmes) + "\n" + "\n".join(cnbce_programmes)
+        xml_content = xml_content.replace('</tv>', all_new + "\n</tv>")
 
         with open("epg.xml", "w", encoding="utf-8") as f:
             f.write(xml_content)
