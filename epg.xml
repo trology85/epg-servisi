@@ -42417,9 +42417,540 @@
     <title lang="tr">İtalya Serie A</title>
     <desc lang="tr">Özetler.</desc>
   </programme>
+<programme start="20260204021500 +0300" stop="20260204040000 +0300" channel="TRT2.tr">
+    <title lang="tr">GÃ¼naydÄ±n</title>
+    <desc lang="tr">Ebeveynlerinin televizyon almayÄ± reddetmesi Ã¼zerine protesto amacÄ±yla konuÅmayÄ± bÄ±rakan iki kÃ¼Ã§Ã¼k Ã§ocuÄun hikayesi anlatÄ±lÄ±yor.</desc>
+    <credits>
+      <director>YasujirÃ´ Ozu</director>
+      <actor>Keiji Sada</actor>
+      <actor>Yoshiko Kuga</actor>
+      <actor>ChishÃ» RyÃ»</actor>
+    </credits>
+    <category lang="tr">Film</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202601/20260129/24/2136243642495eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202601/20260129/24/2136243642495eb7f426.jpg</image>
+  </programme>
+<programme start="20260204040000 +0300" stop="20260204045800 +0300" channel="TRT2.tr">
+    <title lang="tr">Tarih SÃ¶yleÅileri</title>
+    <desc lang="tr">Dr. CoÅkun YÄ±lmaz ve Prof. Dr. Mehmet Ä°pÅirli her hafta Ã¶nemli konuklarÄ±yla, tarihin koridorlarÄ±nda dolaÅÄ±yor. Sunucu ve konuklar tarih nedir, nasÄ±l yazÄ±lmalÄ±, nasÄ±l okunmalÄ± sorularÄ± eÅliÄinde baÅta TÃ¼rk tarihi olmak Ã¼zere zaman zaman da dÃ¼nya tarihinden olaylara, kiÅilere deÄiniyorlar.</desc>
+    <category lang="tr">YaÅam</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202601/20260129/7/2136243642575eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202601/20260129/7/2136243642575eb7f426.jpg</image>
+  </programme>
+<programme start="20260204045800 +0300" stop="20260204050000 +0300" channel="TRT2.tr">
+    <title lang="tr">Ä°stiklal MarÅÄ±</title>
+    <desc lang="tr">Milli MarÅÄ±mÄ±zÄ±n okunmasÄ±</desc>
+    <category lang="tr">Haber</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/2/2204298042115eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/2/2204298042115eb7f426.jpg</image>
+  </programme>
+<programme start="20260204050000 +0300" stop="20260204053000 +0300" channel="TRT2.tr">
+    <title lang="tr">MusikiÅinas</title>
+    <desc lang="tr">Tanburi Cemil Bey'den Sadettin Kaynak'a, Klasik TÃ¼rk MÃ¼ziÄi'nde iz bÄ±rakmÄ±Å bestekarlarÄ±n hayalarÄ±, sanatlarÄ± ve eserleri MusikiÅinas ile ekrana taÅÄ±nÄ±yor.</desc>
+    <category lang="tr">MÃ¼zik</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/42/2204298042195eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/42/2204298042195eb7f426.jpg</image>
+  </programme>
+<programme start="20260204053000 +0300" stop="20260204060000 +0300" channel="TRT2.tr">
+    <title lang="tr">Sinematograf</title>
+    <desc lang="tr">AyÅe BetÃ¼l Kayahan ve Prof. Dr. Arda OdabaÅÄ± TÃ¼rk sinemasÄ±nÄ±n ilk yÄ±llarÄ±na dair yeni bir tarih yazÄ±mÄ± Ã¶nerilen programda, kabul gÃ¶rmÃ¼Å kanaatlere eleÅtirel bir bakÄ±Å sunuluyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/84/2204298052275eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/84/2204298052275eb7f426.jpg</image>
+  </programme>
+<programme start="20260204060000 +0300" stop="20260204063000 +0300" channel="TRT2.tr">
+    <title lang="tr">DuvarlarÄ±n Ãtesinde</title>
+    <desc lang="tr">Ä°Ã§ mimar ve mÃ¼zisyen BÃ¼Åra KayÄ±kÃ§Ä±'nÄ±n mekÃ¢nlar ve sesler Ã¼zerinden kurduÄu baÄ ekrana taÅÄ±nÄ±yor.</desc>
+    <category lang="tr">Belgesel</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/87/2204298052355eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/87/2204298052355eb7f426.jpg</image>
+  </programme>
+<programme start="20260204063000 +0300" stop="20260204071500 +0300" channel="TRT2.tr">
+    <title lang="tr">Edebiyat DÃ¼nyasÄ±</title>
+    <desc lang="tr">Edebiyat DÃ¼nyasÄ±; yazarlara, eserlere ve edebiyatÄ±mÄ±zÄ±n her alanÄ±na Ä±ÅÄ±k tutmak iÃ§in ekranlarÄ±nÄ±za geliyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/29/2204298052435eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/29/2204298052435eb7f426.jpg</image>
+  </programme>
+<programme start="20260204071500 +0300" stop="20260204073000 +0300" channel="TRT2.tr">
+    <title lang="tr">Ãz'Ã¼n YolculuÄu</title>
+    <desc lang="tr">Seyircilerin, sanatÄ±n, tarihin ve ikonik simgelerin bugÃ¼nlere ulaÅmasÄ±nÄ± saÄlayan ehil kimselerin bir gÃ¼nlÃ¼k iÅ rutinlerine misafir olduklarÄ± programda, eser sahiplerinin Ã¼zerinde Ã§alÄ±ÅtÄ±klarÄ± eserler hakkÄ±nda paylaÅtÄ±klarÄ± bilgiler ekrana taÅÄ±nÄ±yor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/35/2204298052515eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/35/2204298052515eb7f426.jpg</image>
+  </programme>
+<programme start="20260204073000 +0300" stop="20260204080000 +0300" channel="TRT2.tr">
+    <title lang="tr">Hayat Sanat</title>
+    <desc lang="tr">Hafta iÃ§i her gÃ¼n yayÄ±nlanan programda, kÃ¼ltÃ¼r ve sanat haberleri; konserler, sergiler, festivaller, son Ã§Ä±kan kitaplar, tiyatro oyunlarÄ±, fuarlar, gÃ¶sterime giren filmler ekrana geliyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/28/2204298062595eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/28/2204298062595eb7f426.jpg</image>
+  </programme>
+<programme start="20260204080000 +0300" stop="20260204083000 +0300" channel="TRT2.tr">
+    <title lang="tr">Resme Yolculuk</title>
+    <desc lang="tr">Cumhuriyetin 100. yÄ±lÄ±nda TÃ¼rkiye'nin en gÃ¼zel noktalarÄ±nÄ± resmetmek Ã¼zere usta bir ressamla Ã§Ä±kÄ±lan yolculukta, resim sanatÄ± tanÄ±tÄ±lÄ±rken, projede yer alan ressamlar anÄ±lÄ±yor ve eserleri izleyicilerle buluÅturuluyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/3/2204298062675eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/3/2204298062675eb7f426.jpg</image>
+  </programme>
+<programme start="20260204083000 +0300" stop="20260204093000 +0300" channel="TRT2.tr">
+    <title lang="tr">HÃ¼lya KoÃ§yiÄit ile Film Gibi Hayatlar</title>
+    <desc lang="tr">Sinema sanatÃ§Ä±sÄ± HÃ¼lya KoÃ§yiÄit hem YeÅilÃ§am'dan hem de gÃ¼nÃ¼mÃ¼z TÃ¼rk sinemasÄ±ndan oyuncular, yÃ¶netmenler, yapÄ±mcÄ±larla sinema sÃ¶yleÅileri yapÄ±yor. ProgramÄ±n temelinde hatÄ±ralar, anekdotlar ve yaÅanmÄ±Å ilginÃ§ sinema hikayeleri yer alÄ±yor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/95/2204298072755eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/95/2204298072755eb7f426.jpg</image>
+  </programme>
+<programme start="20260204093000 +0300" stop="20260204100000 +0300" channel="TRT2.tr">
+    <title lang="tr">Eve DÃ¶nen Miras</title>
+    <desc lang="tr">TÃ¼rkiye'den kaÃ§Ä±rÄ±lmÄ±Å fakat TÃ¼rkiye Cumhuriyeti'nin hukuk mÃ¼cadelesi sonunda ait olduÄu topraklara geri dÃ¶nen sanat eserleri ve arkeolojik bulgularÄ±n hikayesi.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/95/2204298072835eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/95/2204298072835eb7f426.jpg</image>
+  </programme>
+<programme start="20260204100000 +0300" stop="20260204103000 +0300" channel="TRT2.tr">
+    <title lang="tr">Sessizce</title>
+    <desc lang="tr">DoÄuÅtan ya da sonradan duyma yetisini yitirmiÅ sanatÃ§Ä±larÄ±n eserleri ve dÃ¼nyalarÄ±, Sessizce ile ekrana taÅÄ±nÄ±yor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/88/2204298082915eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/88/2204298082915eb7f426.jpg</image>
+  </programme>
+<programme start="20260204103000 +0300" stop="20260204111500 +0300" channel="TRT2.tr">
+    <title lang="tr">Edebiyat DÃ¼nyasÄ±</title>
+    <desc lang="tr">Edebiyat DÃ¼nyasÄ±; yazarlara, eserlere ve edebiyatÄ±mÄ±zÄ±n her alanÄ±na Ä±ÅÄ±k tutmak iÃ§in ekranlarÄ±nÄ±za geliyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/50/2204298082995eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/50/2204298082995eb7f426.jpg</image>
+  </programme>
+<programme start="20260204111500 +0300" stop="20260204113000 +0300" channel="TRT2.tr">
+    <title lang="tr">Ãz'Ã¼n YolculuÄu</title>
+    <desc lang="tr">Seyircilerin, sanatÄ±n, tarihin ve ikonik simgelerin bugÃ¼nlere ulaÅmasÄ±nÄ± saÄlayan ehil kimselerin bir gÃ¼nlÃ¼k iÅ rutinlerine misafir olduklarÄ± programda, eser sahiplerinin Ã¼zerinde Ã§alÄ±ÅtÄ±klarÄ± eserler hakkÄ±nda paylaÅtÄ±klarÄ± bilgiler ekrana taÅÄ±nÄ±yor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/84/2204298083075eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/84/2204298083075eb7f426.jpg</image>
+  </programme>
+<programme start="20260204113000 +0300" stop="20260204120000 +0300" channel="TRT2.tr">
+    <title lang="tr">Ä°Ã§imizdeki Ev</title>
+    <desc lang="tr">Erol ErdoÄan'Ä±n sunduÄu Ä°Ã§imizdeki Ev, 'aile olmak' temasÄ±nÄ± Ã§ok boyutlu bir Ã§erÃ§evede ele alÄ±yor. Program, doÄa, kÃ¼ltÃ¼r, okul, sanat ve akran iliÅkileri gibi alanlarda bir ailenin gÃ¼ndelik hayatta karÅÄ±laÅtÄ±ÄÄ± soru ve sorunlarÄ±, uzman konuklarla yapÄ±lan sohbetlerle masaya yatÄ±rÄ±yor.</desc>
+    <category lang="tr">YaÅam</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/95/2204298083155eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/95/2204298083155eb7f426.jpg</image>
+  </programme>
+<programme start="20260204120000 +0300" stop="20260204123000 +0300" channel="TRT2.tr">
+    <title lang="tr">Hayat Sanat</title>
+    <desc lang="tr">Hafta iÃ§i her gÃ¼n yayÄ±nlanan programda, kÃ¼ltÃ¼r ve sanat haberleri; konserler, sergiler, festivaller, son Ã§Ä±kan kitaplar, tiyatro oyunlarÄ±, fuarlar, gÃ¶sterime giren filmler ekrana geliyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/5/2204298093235eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/5/2204298093235eb7f426.jpg</image>
+  </programme>
+<programme start="20260204123000 +0300" stop="20260204130000 +0300" channel="TRT2.tr">
+    <title lang="tr">Adagio</title>
+    <desc lang="tr">Klasik mÃ¼zik tarihinde Ã¶nemli yere sahip eserlerin seslendirildiÄi programda, alanÄ±nda uzman isimler besteler Ã¼zerine gÃ¶rÃ¼Ålerine dile getiriyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/40/2204298093315eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/40/2204298093315eb7f426.jpg</image>
+  </programme>
+<programme start="20260204130000 +0300" stop="20260204150000 +0300" channel="TRT2.tr">
+    <title lang="tr">BÄ±rakÄ±n Ãocuk OynasÄ±n</title>
+    <desc lang="tr">1890'lardan itibaren geliÅen sinema teknolojisinin 20. yÃ¼zyÄ±lÄ±n sanat anlayÄ±ÅÄ± Ã¼zerindeki etkilerini konu edinen belgeselde, araÅtÄ±rmacÄ±larÄ±n inceleme fÄ±rsatÄ± bulamadÄ±ÄÄ± erken dÃ¶nem filmlerden gÃ¶rÃ¼ntÃ¼ler ve zengin gÃ¶rsel materyaller yer alÄ±yor.</desc>
+    <category lang="tr">Belgesel</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/38/2204298103395eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/38/2204298103395eb7f426.jpg</image>
+  </programme>
+<programme start="20260204150000 +0300" stop="20260204170000 +0300" channel="TRT2.tr">
+    <title lang="tr">Himalaya - Bir Åefin ÃocukluÄu</title>
+    <desc lang="tr">Gelecekte, kabilesinin Åefi olacak bir gencin hikayesi konu ediliyor.</desc>
+    <credits>
+      <director>Eric Valli</director>
+      <director>Michel Debats</director>
+      <actor>Thilen Lhondup</actor>
+      <actor>Gurgon Kyap</actor>
+      <actor>Lhakpa Tsamchoe</actor>
+    </credits>
+    <category lang="tr">Film</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/90/2204298103475eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/90/2204298103475eb7f426.jpg</image>
+  </programme>
+<programme start="20260204170000 +0300" stop="20260204180000 +0300" channel="TRT2.tr">
+    <title lang="tr">Tarih SÃ¶yleÅileri</title>
+    <desc lang="tr">Dr. CoÅkun YÄ±lmaz ve Prof. Dr. Mehmet Ä°pÅirli her hafta Ã¶nemli konuklarÄ±yla, tarihin koridorlarÄ±nda dolaÅÄ±yor. Sunucu ve konuklar tarih nedir, nasÄ±l yazÄ±lmalÄ±, nasÄ±l okunmalÄ± sorularÄ± eÅliÄinde baÅta TÃ¼rk tarihi olmak Ã¼zere zaman zaman da dÃ¼nya tarihinden olaylara, kiÅilere deÄiniyorlar.</desc>
+    <category lang="tr">YaÅam</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/54/2204298113555eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/54/2204298113555eb7f426.jpg</image>
+  </programme>
+<programme start="20260204180000 +0300" stop="20260204183000 +0300" channel="TRT2.tr">
+    <title lang="tr">Hayat Sanat</title>
+    <desc lang="tr">Hafta iÃ§i her gÃ¼n yayÄ±nlanan programda, kÃ¼ltÃ¼r ve sanat haberleri; konserler, sergiler, festivaller, son Ã§Ä±kan kitaplar, tiyatro oyunlarÄ±, fuarlar, gÃ¶sterime giren filmler ekrana geliyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/64/2204298113635eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/64/2204298113635eb7f426.jpg</image>
+  </programme>
+<programme start="20260204183000 +0300" stop="20260204190000 +0300" channel="TRT2.tr">
+    <title lang="tr">Edebi Sofralar</title>
+    <desc lang="tr">Baha AydÄ±n'Ä±n sunduÄu programda, bir yazar ya da kitabÄ±n dÃ¼nyasÄ±na ait yemeklerden oluÅan bir sofra kuruluyor ve uzman bir konuk eÅliÄinde yazarÄ±n hayatÄ± ve eseri Ã¼zerine sohbet gerÃ§ekleÅtiriliyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/59/2204298113715eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/59/2204298113715eb7f426.jpg</image>
+  </programme>
+<programme start="20260204190000 +0300" stop="20260204193000 +0300" channel="TRT2.tr">
+    <title lang="tr">Anadolu'da Giyimin Ayak Ä°zleri</title>
+    <desc lang="tr">Anadolu'nun tarih boyunca farklÄ± dÃ¶nemlerde Åekillenen giyim kuÅam alÄ±ÅkanlÄ±klarÄ±nÄ± ele alan program, medeniyetlerin izlerini taÅÄ±yan kumaÅlarÄ±, aksesuarlarÄ± ve toplumsal yansÄ±malarÄ± kapsamlÄ± bir Åekilde inceliyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/19/2204298113795eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/19/2204298113795eb7f426.jpg</image>
+  </programme>
+<programme start="20260204193000 +0300" stop="20260204201500 +0300" channel="TRT2.tr">
+    <title lang="tr">BakÄ±Å BoÅluÄu</title>
+    <desc lang="tr">Mutlu KurnalÄ± ve sinema yazarÄ± Enver GÃ¼lÅen, 'BakÄ±Å BoÅluÄu'nda varlÄ±Äa aÃ§Ä±lan kavramlarÄ±n farklÄ± hallerini, filmlerden ve sahnelerden yola Ã§Ä±karak ele alÄ±yor. Umudun, Ã¶zgÃ¼rlÃ¼ÄÃ¼n, merhametin, aÅkÄ±n ve daha fazlasÄ±nÄ±n sahnelere dÃ¼Åen yansÄ±malarÄ±ndan ilham alÄ±rken kavramlarÄ±n dÃ¼nÃ¼nÃ¼, bugÃ¼nÃ¼nÃ¼ ve geleceÄini de tartÄ±ÅÄ±yor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/3/2204298123875eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/3/2204298123875eb7f426.jpg</image>
+  </programme>
+<programme start="20260204201500 +0300" stop="20260204203000 +0300" channel="TRT2.tr">
+    <title lang="tr">MÃ¼zelerin YÄ±ldÄ±zlarÄ±</title>
+    <desc lang="tr">BazÄ± mÃ¼zelerde, o mÃ¼zeyle Ã¶zdeÅleÅmiÅ, mÃ¼zenin ismini duyunca hemen akla gelen eserler vardÄ±r. Bu programda her bir mÃ¼zenin diÄer objelerine gÃ¶re yÄ±ldÄ±zlaÅmÄ±Å eserleri ekrana geliyor ve eser derinlemesine inceleniyor...</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/71/2204298123955eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/71/2204298123955eb7f426.jpg</image>
+  </programme>
+<programme start="20260204203000 +0300" stop="20260204210000 +0300" channel="TRT2.tr">
+    <title lang="tr">Tarihin Renkleri</title>
+    <desc lang="tr">Prof. Dr. Ali Satan'Ä±n alanÄ±nda uzman konuklarÄ±nÄ± aÄÄ±rladÄ±ÄÄ± programda, tarihi olaylar, yaÅanmÄ±Å hayatlar ve dÃ¶nÃ¼m noktalarÄ±, yeni bir bakÄ±Å aÃ§Ä±sÄ±yla ele alÄ±nÄ±yor.</desc>
+    <category lang="tr">YaÅam</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/72/2204298134035eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/72/2204298134035eb7f426.jpg</image>
+  </programme>
+<programme start="20260204210000 +0300" stop="20260204213000 +0300" channel="TRT2.tr">
+    <title lang="tr">AnlatÄ±</title>
+    <desc lang="tr">EdebiyatÄ±n hikÃ¢ye tÃ¼rÃ¼ ile mÃ¼zik, resim, dans gibi sanat dallarÄ±nÄ± aynÄ± sahnede sunan AnlatÄ±, adeta Ã§ok sesli bir koro oluÅturarak izleyiciye bir sanat armonisi sunuyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/98/2204298134115eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/98/2204298134115eb7f426.jpg</image>
+  </programme>
+<programme start="20260204213000 +0300" stop="20260204233000 +0300" channel="TRT2.tr">
+    <title lang="tr">Ä°Ã§eride</title>
+    <desc lang="tr">LÃ¼ks bir Ã§atÄ± katÄ±nda mahsur kalan ve gerÃ§eklikle baÄÄ±nÄ± yavaÅ yavaÅ kaybeden bir sanat hÄ±rsÄ±zÄ±nÄ±n hikayesi konu ediliyor.</desc>
+    <credits>
+      <director>Vasilis Katsoupis</director>
+      <actor>Willem Dafoe</actor>
+      <actor>Gene Bervoets</actor>
+      <actor>Eliza Stuyck</actor>
+    </credits>
+    <category lang="tr">Film</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/67/2204298144195eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/67/2204298144195eb7f426.jpg</image>
+  </programme>
+<programme start="20260204233000 +0300" stop="20260205000000 +0300" channel="TRT2.tr">
+    <title lang="tr">Medeniyet ve Mimari</title>
+    <desc lang="tr">Prof. Dr. Sadettin Ãkten ve Dr. Sacide AkÄ±n Medeniyet ve Mimari programÄ±nda Dersaadet'te bulunan Sultan Camileri ve kÃ¼lliyeleri Ã¼zerinden bir medeniyet okumasÄ± yapÄ±yor.</desc>
+    <category lang="tr">YaÅam</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/84/2204298144275eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/84/2204298144275eb7f426.jpg</image>
+  </programme>
+<programme start="20260205000000 +0300" stop="20260205013000 +0300" channel="TRT2.tr">
+    <title lang="tr">Venedik: Sonsuz Avangart</title>
+    <desc lang="tr">DÃ¼nyaca Ã¼nlÃ¼ Ä°talyan Åehri Venedik'in sanatÄ±na, mimarisine ve tarihine; Hania Rani'nin yine Venedik'ten aldÄ±ÄÄ± ilhamla bestelediÄi eserler eÅliÄinde yolculuk...</desc>
+    <category lang="tr">Belgesel</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/18/2204298144355eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/18/2204298144355eb7f426.jpg</image>
+  </programme>
+<programme start="20260205013000 +0300" stop="20260205033000 +0300" channel="TRT2.tr">
+    <title lang="tr">Ä°Ã§eride</title>
+    <desc lang="tr">LÃ¼ks bir Ã§atÄ± katÄ±nda mahsur kalan ve gerÃ§eklikle baÄÄ±nÄ± yavaÅ yavaÅ kaybeden bir sanat hÄ±rsÄ±zÄ±nÄ±n hikayesi konu ediliyor.</desc>
+    <credits>
+      <director>Vasilis Katsoupis</director>
+      <actor>Willem Dafoe</actor>
+      <actor>Gene Bervoets</actor>
+      <actor>Eliza Stuyck</actor>
+    </credits>
+    <category lang="tr">Film</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/0/2204298144435eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/0/2204298144435eb7f426.jpg</image>
+  </programme>
+<programme start="20260205033000 +0300" stop="20260205052800 +0300" channel="TRT2.tr">
+    <title lang="tr">Himalaya - Bir Åefin ÃocukluÄu</title>
+    <desc lang="tr">Gelecekte, kabilesinin Åefi olacak bir gencin hikayesi konu ediliyor.</desc>
+    <credits>
+      <director>Eric Valli</director>
+      <director>Michel Debats</director>
+      <actor>Thilen Lhondup</actor>
+      <actor>Gurgon Kyap</actor>
+      <actor>Lhakpa Tsamchoe</actor>
+    </credits>
+    <category lang="tr">Film</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/16/2204298154515eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/16/2204298154515eb7f426.jpg</image>
+  </programme>
+<programme start="20260205052800 +0300" stop="20260205053000 +0300" channel="TRT2.tr">
+    <title lang="tr">Ä°stiklal MarÅÄ±</title>
+    <desc lang="tr">Milli MarÅÄ±mÄ±zÄ±n okunmasÄ±</desc>
+    <category lang="tr">Haber</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/15/2204298154595eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/15/2204298154595eb7f426.jpg</image>
+  </programme>
+<programme start="20260205053000 +0300" stop="20260205060000 +0300" channel="TRT2.tr">
+    <title lang="tr">AnlatÄ±</title>
+    <desc lang="tr">EdebiyatÄ±n hikÃ¢ye tÃ¼rÃ¼ ile mÃ¼zik, resim, dans gibi sanat dallarÄ±nÄ± aynÄ± sahnede sunan AnlatÄ±, adeta Ã§ok sesli bir koro oluÅturarak izleyiciye bir sanat armonisi sunuyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/13/2204298164675eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/13/2204298164675eb7f426.jpg</image>
+  </programme>
+<programme start="20260205060000 +0300" stop="20260205063000 +0300" channel="TRT2.tr">
+    <title lang="tr">Tarihin Renkleri</title>
+    <desc lang="tr">Prof. Dr. Ali Satan'Ä±n alanÄ±nda uzman konuklarÄ±nÄ± aÄÄ±rladÄ±ÄÄ± programda, tarihi olaylar, yaÅanmÄ±Å hayatlar ve dÃ¶nÃ¼m noktalarÄ±, yeni bir bakÄ±Å aÃ§Ä±sÄ±yla ele alÄ±nÄ±yor.</desc>
+    <category lang="tr">YaÅam</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/49/2204298164755eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/49/2204298164755eb7f426.jpg</image>
+  </programme>
+<programme start="20260205063000 +0300" stop="20260205070000 +0300" channel="TRT2.tr">
+    <title lang="tr">Ä°Åaretler</title>
+    <desc lang="tr">DÃ¼nyanÄ±n kÃ¼ltÃ¼r â sanat alanÄ±nda iÅaret diliyle hazÄ±rlanan ilk programÄ± Ä°Åaretler'de, Åule Denli'nin sunumuyla iÅaret dili bir iletiÅim aracÄ± olmaktan Ã¶teye taÅÄ±narak, kÃ¼ltÃ¼rel ve sanatsal bir ifade aracÄ± olarak kullanÄ±lÄ±yor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/75/2204298174835eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/75/2204298174835eb7f426.jpg</image>
+  </programme>
+<programme start="20260205070000 +0300" stop="20260205073000 +0300" channel="TRT2.tr">
+    <title lang="tr">Tiyatrovizyon</title>
+    <desc lang="tr">Devlet TiyatrolarÄ±'nda sahnelenen eserlerin hazÄ±rlÄ±k ve izleyiciyle buluÅma sÃ¼reÃ§leri Tiyatrovizyon'da ekrana taÅÄ±nÄ±yor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/65/2204298174915eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/65/2204298174915eb7f426.jpg</image>
+  </programme>
+<programme start="20260205073000 +0300" stop="20260205080000 +0300" channel="TRT2.tr">
+    <title lang="tr">Hayat Sanat</title>
+    <desc lang="tr">Hafta iÃ§i her gÃ¼n yayÄ±nlanan programda, kÃ¼ltÃ¼r ve sanat haberleri; konserler, sergiler, festivaller, son Ã§Ä±kan kitaplar, tiyatro oyunlarÄ±, fuarlar, gÃ¶sterime giren filmler ekrana geliyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/67/2204298174995eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/67/2204298174995eb7f426.jpg</image>
+  </programme>
+<programme start="20260205080000 +0300" stop="20260205083000 +0300" channel="TRT2.tr">
+    <title lang="tr">DuvarlarÄ±n Ãtesinde</title>
+    <desc lang="tr">Ä°Ã§ mimar ve mÃ¼zisyen BÃ¼Åra KayÄ±kÃ§Ä±'nÄ±n mekÃ¢nlar ve sesler Ã¼zerinden kurduÄu baÄ ekrana taÅÄ±nÄ±yor.</desc>
+    <category lang="tr">Belgesel</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/81/2204298175075eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/81/2204298175075eb7f426.jpg</image>
+  </programme>
+<programme start="20260205083000 +0300" stop="20260205090000 +0300" channel="TRT2.tr">
+    <title lang="tr">Antik Miras</title>
+    <desc lang="tr">Ãren yerlerinde yapÄ±lan kazÄ±larÄ± bir serÃ¼ven kurgusuyla ekrana taÅÄ±yan programda, Ã¼lkemizin sahip olduÄu arkeolojik zenginlikler ekrana taÅÄ±nÄ±yor.</desc>
+    <category lang="tr">YaÅam</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/52/2204298185155eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/52/2204298185155eb7f426.jpg</image>
+  </programme>
+<programme start="20260205090000 +0300" stop="20260205093000 +0300" channel="TRT2.tr">
+    <title lang="tr">Kim Korkar Geleneksel Sanattan</title>
+    <desc lang="tr">TÃ¼rk ve Ä°slam sanatlarÄ±nÄ±n kÃ¶klÃ¼ mirasÄ±nÄ± keÅfederek, geleneksel sanatlarÄ±n kavramlarÄ±, teknikleri, eserleri ve bu alandaki Ã¶nemli kiÅiler detaylÄ± bir Åekilde ele alÄ±nÄ±rken, bu sanatlarÄ±n modern dÃ¼nyadaki etkileri, anlamlarÄ± ve gÃ¼ncel yorumlarÄ±, seÃ§ilmiÅ mekÃ¢nlar ve konuklar eÅliÄinde, geleneksel sanatlarÄ±n derinlikleri tartÄ±ÅÄ±lÄ±yor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/70/2204298185235eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/70/2204298185235eb7f426.jpg</image>
+  </programme>
+<programme start="20260205093000 +0300" stop="20260205100000 +0300" channel="TRT2.tr">
+    <title lang="tr">SarayÄ±n Lezzetleri</title>
+    <desc lang="tr">Åef Yunus Emre Akkor'un sunduÄu SarayÄ±n Lezzetleri'nde geniÅ bir coÄrafyaya yayÄ±lan OsmanlÄ±larda padiÅahlarÄ±n beslenme kÃ¼ltÃ¼rÃ¼, sofra adabÄ± ve dÃ¶nemin mutfak ekonomisine dair ilginÃ§ bilgiler yer alÄ±yor.</desc>
+    <category lang="tr">YaÅam</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/92/2204298195315eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/92/2204298195315eb7f426.jpg</image>
+  </programme>
+<programme start="20260205100000 +0300" stop="20260205104500 +0300" channel="TRT2.tr">
+    <title lang="tr">BakÄ±Å BoÅluÄu</title>
+    <desc lang="tr">Mutlu KurnalÄ± ve sinema yazarÄ± Enver GÃ¼lÅen, 'BakÄ±Å BoÅluÄu'nda varlÄ±Äa aÃ§Ä±lan kavramlarÄ±n farklÄ± hallerini, filmlerden ve sahnelerden yola Ã§Ä±karak ele alÄ±yor. Umudun, Ã¶zgÃ¼rlÃ¼ÄÃ¼n, merhametin, aÅkÄ±n ve daha fazlasÄ±nÄ±n sahnelere dÃ¼Åen yansÄ±malarÄ±ndan ilham alÄ±rken kavramlarÄ±n dÃ¼nÃ¼nÃ¼, bugÃ¼nÃ¼nÃ¼ ve geleceÄini de tartÄ±ÅÄ±yor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/55/2204298195395eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/55/2204298195395eb7f426.jpg</image>
+  </programme>
+<programme start="20260205104500 +0300" stop="20260205110000 +0300" channel="TRT2.tr">
+    <title lang="tr">FotoÄraflar</title>
+    <desc lang="tr">Her fotoÄrafÄ±n arkasÄ±nda kendine Ã¶zgÃ¼ bir hikayesi vardÄ±r. Bu programda da kÄ±sa kÄ±sa dÃ¼nyaca Ã¼nlÃ¼ fotoÄraflarÄ±n Ã¼stÃ¼nden geÃ§ip arkalarÄ±nda yatan Ã§arpÄ±cÄ± hikayeler anlatÄ±lÄ±yor.</desc>
+    <credits>
+      <producer>Trt2</producer>
+    </credits>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/48/2204298205475eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/48/2204298205475eb7f426.jpg</image>
+  </programme>
+<programme start="20260205110000 +0300" stop="20260205113000 +0300" channel="TRT2.tr">
+    <title lang="tr">Anadolu'da Giyimin Ayak Ä°zleri</title>
+    <desc lang="tr">Anadolu'nun tarih boyunca farklÄ± dÃ¶nemlerde Åekillenen giyim kuÅam alÄ±ÅkanlÄ±klarÄ±nÄ± ele alan program, medeniyetlerin izlerini taÅÄ±yan kumaÅlarÄ±, aksesuarlarÄ± ve toplumsal yansÄ±malarÄ± kapsamlÄ± bir Åekilde inceliyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/68/2204298205555eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/68/2204298205555eb7f426.jpg</image>
+  </programme>
+<programme start="20260205113000 +0300" stop="20260205120000 +0300" channel="TRT2.tr">
+    <title lang="tr">Resme Yolculuk</title>
+    <desc lang="tr">Cumhuriyetin 100. yÄ±lÄ±nda TÃ¼rkiye'nin en gÃ¼zel noktalarÄ±nÄ± resmetmek Ã¼zere usta bir ressamla Ã§Ä±kÄ±lan yolculukta, resim sanatÄ± tanÄ±tÄ±lÄ±rken, projede yer alan ressamlar anÄ±lÄ±yor ve eserleri izleyicilerle buluÅturuluyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/62/2204298205635eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/62/2204298205635eb7f426.jpg</image>
+  </programme>
+<programme start="20260205120000 +0300" stop="20260205123000 +0300" channel="TRT2.tr">
+    <title lang="tr">Hayat Sanat</title>
+    <desc lang="tr">Hafta iÃ§i her gÃ¼n yayÄ±nlanan programda, kÃ¼ltÃ¼r ve sanat haberleri; konserler, sergiler, festivaller, son Ã§Ä±kan kitaplar, tiyatro oyunlarÄ±, fuarlar, gÃ¶sterime giren filmler ekrana geliyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/41/2204298205715eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/41/2204298205715eb7f426.jpg</image>
+  </programme>
+<programme start="20260205123000 +0300" stop="20260205130000 +0300" channel="TRT2.tr">
+    <title lang="tr">Edebi Sofralar</title>
+    <desc lang="tr">Baha AydÄ±n'Ä±n sunduÄu programda, bir yazar ya da kitabÄ±n dÃ¼nyasÄ±na ait yemeklerden oluÅan bir sofra kuruluyor ve uzman bir konuk eÅliÄinde yazarÄ±n hayatÄ± ve eseri Ã¼zerine sohbet gerÃ§ekleÅtiriliyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/84/2204298215795eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/84/2204298215795eb7f426.jpg</image>
+  </programme>
+<programme start="20260205130000 +0300" stop="20260205133000 +0300" channel="TRT2.tr">
+    <title lang="tr">Sinematograf</title>
+    <desc lang="tr">AyÅe BetÃ¼l Kayahan ve Prof. Dr. Arda OdabaÅÄ± TÃ¼rk sinemasÄ±nÄ±n ilk yÄ±llarÄ±na dair yeni bir tarih yazÄ±mÄ± Ã¶nerilen programda, kabul gÃ¶rmÃ¼Å kanaatlere eleÅtirel bir bakÄ±Å sunuluyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/35/2204298215875eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/35/2204298215875eb7f426.jpg</image>
+  </programme>
+<programme start="20260205133000 +0300" stop="20260205140000 +0300" channel="TRT2.tr">
+    <title lang="tr">Tarihin Renkleri</title>
+    <desc lang="tr">Prof. Dr. Ali Satan'Ä±n alanÄ±nda uzman konuklarÄ±nÄ± aÄÄ±rladÄ±ÄÄ± programda, tarihi olaylar, yaÅanmÄ±Å hayatlar ve dÃ¶nÃ¼m noktalarÄ±, yeni bir bakÄ±Å aÃ§Ä±sÄ±yla ele alÄ±nÄ±yor.</desc>
+    <category lang="tr">YaÅam</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/53/2204298225955eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/53/2204298225955eb7f426.jpg</image>
+  </programme>
+<programme start="20260205140000 +0300" stop="20260205144500 +0300" channel="TRT2.tr">
+    <title lang="tr">Edebiyat DÃ¼nyasÄ±</title>
+    <desc lang="tr">Edebiyat DÃ¼nyasÄ±; yazarlara, eserlere ve edebiyatÄ±mÄ±zÄ±n her alanÄ±na Ä±ÅÄ±k tutmak iÃ§in ekranlarÄ±nÄ±za geliyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/24/2204298226035eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/24/2204298226035eb7f426.jpg</image>
+  </programme>
+<programme start="20260205144500 +0300" stop="20260205150000 +0300" channel="TRT2.tr">
+    <title lang="tr">MÃ¼zelerin YÄ±ldÄ±zlarÄ±</title>
+    <desc lang="tr">BazÄ± mÃ¼zelerde, o mÃ¼zeyle Ã¶zdeÅleÅmiÅ, mÃ¼zenin ismini duyunca hemen akla gelen eserler vardÄ±r. Bu programda her bir mÃ¼zenin diÄer objelerine gÃ¶re yÄ±ldÄ±zlaÅmÄ±Å eserleri ekrana geliyor ve eser derinlemesine inceleniyor...</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/78/2204298236115eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/78/2204298236115eb7f426.jpg</image>
+  </programme>
+<programme start="20260205150000 +0300" stop="20260205170000 +0300" channel="TRT2.tr">
+    <title lang="tr">99 Ev</title>
+    <desc lang="tr">Yeni iÅsiz kalan bekar bir baba, hayal kÄ±rÄ±klÄ±ÄÄ±nÄ±n kaynaÄÄ± olan emlakÃ§Ä±nÄ±n yanÄ±nda Ã§alÄ±Åarak hacizli evini geri almaya Ã§alÄ±ÅÄ±r.</desc>
+    <credits>
+      <director>Ramin Bahrani</director>
+      <actor>Andrew Garfield</actor>
+      <actor>Michael Shannon</actor>
+      <actor>Laura Dern</actor>
+    </credits>
+    <category lang="tr">Film</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/32/2204298236195eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/32/2204298236195eb7f426.jpg</image>
+  </programme>
+<programme start="20260205170000 +0300" stop="20260205173000 +0300" channel="TRT2.tr">
+    <title lang="tr">Medeniyet ve Mimari</title>
+    <desc lang="tr">Prof. Dr. Sadettin Ãkten ve Dr. Sacide AkÄ±n Medeniyet ve Mimari programÄ±nda Dersaadet'te bulunan Sultan Camileri ve kÃ¼lliyeleri Ã¼zerinden bir medeniyet okumasÄ± yapÄ±yor.</desc>
+    <category lang="tr">YaÅam</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/41/2204298236275eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/41/2204298236275eb7f426.jpg</image>
+  </programme>
+<programme start="20260205173000 +0300" stop="20260205180000 +0300" channel="TRT2.tr">
+    <title lang="tr">Adagio</title>
+    <desc lang="tr">Klasik mÃ¼zik tarihinde Ã¶nemli yere sahip eserlerin seslendirildiÄi programda, alanÄ±nda uzman isimler besteler Ã¼zerine gÃ¶rÃ¼Ålerine dile getiriyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/29/2204298236355eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/29/2204298236355eb7f426.jpg</image>
+  </programme>
+<programme start="20260205180000 +0300" stop="20260205183000 +0300" channel="TRT2.tr">
+    <title lang="tr">Hayat Sanat</title>
+    <desc lang="tr">Hafta iÃ§i her gÃ¼n yayÄ±nlanan programda, kÃ¼ltÃ¼r ve sanat haberleri; konserler, sergiler, festivaller, son Ã§Ä±kan kitaplar, tiyatro oyunlarÄ±, fuarlar, gÃ¶sterime giren filmler ekrana geliyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/18/2204298246435eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/18/2204298246435eb7f426.jpg</image>
+  </programme>
+<programme start="20260205183000 +0300" stop="20260205190000 +0300" channel="TRT2.tr">
+    <title lang="tr">HatÄ±r</title>
+    <desc lang="tr">TÃ¼rk resim sanatÄ±nÄ±n Ã¶nde gelen tablolarÄ±nÄ± merkeze alan program, kompozisyonun temel unsurlarÄ±nÄ± kÃ¼ltÃ¼rel mirasla buluÅturuyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/37/2204298246515eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/37/2204298246515eb7f426.jpg</image>
+  </programme>
+<programme start="20260205190000 +0300" stop="20260205191500 +0300" channel="TRT2.tr">
+    <title lang="tr">FotoÄrafÃ§Ä±nÄ±n KitabÄ±</title>
+    <desc lang="tr">Bir fotoÄraf kitabÄ± nasÄ±l ortaya Ã§Ä±kar? GÃ¶rsel bir hikayenin peÅine dÃ¼Åen FotoÄrafÃ§Ä±nÄ±n KitabÄ± her bÃ¶lÃ¼mde farklÄ± bir fotoÄraf sanatÃ§Ä±sÄ±nÄ±n kitabÄ±na odaklanÄ±yor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/5/2204298256595eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/5/2204298256595eb7f426.jpg</image>
+  </programme>
+<programme start="20260205191500 +0300" stop="20260205193000 +0300" channel="TRT2.tr">
+    <title lang="tr">TÃ¼rkiye AtlasÄ±</title>
+    <desc lang="tr">Her bÃ¶lÃ¼mde TÃ¼rkiye'deki farklÄ± Åehirlerin yeme iÃ§me kÃ¼ltÃ¼rleri, mimari Ã¶zellikleri, doÄal gÃ¼zellikleri ve kÃ¼ltÃ¼r - sanat yaÅantÄ±larÄ± ekrana yansÄ±tÄ±lÄ±yor.</desc>
+    <category lang="tr">Gezi &amp; Seyahat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/84/2204298256675eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/84/2204298256675eb7f426.jpg</image>
+  </programme>
+<programme start="20260205193000 +0300" stop="20260205203000 +0300" channel="TRT2.tr">
+    <title lang="tr">Sinema +</title>
+    <desc lang="tr">Her hafta vizyona girecek filmlerin ve gÃ¼ncel sinema haberlerinin verildiÄi programda, birbirinden deÄerli konuklar aÄÄ±rlanÄ±yor.</desc>
+    <category lang="tr">EÄlence</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/45/2204298266755eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/45/2204298266755eb7f426.jpg</image>
+  </programme>
+<programme start="20260205203000 +0300" stop="20260205210000 +0300" channel="TRT2.tr">
+    <title lang="tr">MÃ¼stesna</title>
+    <desc lang="tr">Engel tanÄ±mayan sanatÃ§Ä±larÄ±n baleden resime, mÃ¼zikten el sanatlarÄ±na Ã§eÅitli dallarda ortaya koyduklarÄ± eserler ve ilham veren hikayeleri.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/2/2204298266835eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/2/2204298266835eb7f426.jpg</image>
+  </programme>
+<programme start="20260205210000 +0300" stop="20260205213000 +0300" channel="TRT2.tr">
+    <title lang="tr">SanatÃ§Ä±nÄ±n Åehri</title>
+    <desc lang="tr">SanatÄ±n farklÄ± dallarÄ±nda faaliyet gÃ¶steren sanatÃ§Ä±lar, yaÅadÄ±klarÄ± Åehirlerin sanat hayatlarÄ±na etkilerini anlatÄ±yorlar.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/12/2204298266915eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/12/2204298266915eb7f426.jpg</image>
+  </programme>
+<programme start="20260205213000 +0300" stop="20260205231500 +0300" channel="TRT2.tr">
+    <title lang="tr">Derin Kuyu</title>
+    <desc lang="tr">KazÄ±cÄ± Ensep zengin olmak iÃ§in bozkÄ±rda en derin kuyuyu kazar. ÃnÃ¼ bozkÄ±r boyunca yayÄ±lÄ±r ve tÃ¼m mÃ¼Återiler yavaÅÃ§a ona gider ancak doÄanÄ±n dengesini bozduÄundan habersizdir.</desc>
+    <credits>
+      <director>Zhanabek Zhetiruov</director>
+      <actor>Aldash Shalbayev</actor>
+      <actor>Asylkhan Tolepov</actor>
+      <actor>Maksat Sabitov</actor>
+      <actor>Aizhan Zhetiru</actor>
+    </credits>
+    <category lang="tr">Film</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/94/2204298266995eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/94/2204298266995eb7f426.jpg</image>
+  </programme>
+<programme start="20260205231500 +0300" stop="20260206001500 +0300" channel="TRT2.tr">
+    <title lang="tr">Felsefenin SerÃ¼veni</title>
+    <desc lang="tr">Felsefenin SerÃ¼veni programÄ±nda bu hafta Prof. Dr. Cengiz Ãakmak ve Ali Beytullah ÃakÄ±r, Platon'un diyaloglarÄ±nÄ±n genel yapÄ±sÄ±nÄ± konuÅuyor.</desc>
+    <category lang="tr">KÃ¼ltÃ¼r &amp; Sanat</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/20/2204298277075eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/20/2204298277075eb7f426.jpg</image>
+  </programme>
+<programme start="20260206001500 +0300" stop="20260206021500 +0300" channel="TRT2.tr">
+    <title lang="tr">99 Ev</title>
+    <desc lang="tr">Yeni iÅsiz kalan bekar bir baba, hayal kÄ±rÄ±klÄ±ÄÄ±nÄ±n kaynaÄÄ± olan emlakÃ§Ä±nÄ±n yanÄ±nda Ã§alÄ±Åarak hacizli evini geri almaya Ã§alÄ±ÅÄ±r.</desc>
+    <credits>
+      <director>Ramin Bahrani</director>
+      <actor>Andrew Garfield</actor>
+      <actor>Michael Shannon</actor>
+      <actor>Laura Dern</actor>
+    </credits>
+    <category lang="tr">Film</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/21/2204298277155eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/21/2204298277155eb7f426.jpg</image>
+  </programme>
+<programme start="20260206021500 +0300" stop="20260206040000 +0300" channel="TRT2.tr">
+    <title lang="tr">Derin Kuyu</title>
+    <desc lang="tr">KazÄ±cÄ± Ensep zengin olmak iÃ§in bozkÄ±rda en derin kuyuyu kazar. ÃnÃ¼ bozkÄ±r boyunca yayÄ±lÄ±r ve tÃ¼m mÃ¼Återiler yavaÅÃ§a ona gider ancak doÄanÄ±n dengesini bozduÄundan habersizdir.</desc>
+    <credits>
+      <director>Zhanabek Zhetiruov</director>
+      <actor>Aldash Shalbayev</actor>
+      <actor>Asylkhan Tolepov</actor>
+      <actor>Maksat Sabitov</actor>
+      <actor>Aizhan Zhetiru</actor>
+    </credits>
+    <category lang="tr">Film</category>
+    <icon src="https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/68/2204298287235eb7f426.jpg" />
+    <image type="backdrop" size="3" orient="L">https://izmottvsc25.tvplus.com.tr:33207/CPS/images/universal/film/program/202602/20260202/68/2204298287235eb7f426.jpg</image>
+  </programme>
   <channel id="CNBC-E">
     <display-name lang="tr">CNBC-E</display-name>
   </channel>
-
-
+  <channel id="TRT2.tr">
+    <display-name lang="tr">TRT2.tr</display-name>
+  </channel>
 </tv>
