@@ -5,41 +5,46 @@ import io
 import re
 from datetime import datetime
 
-def get_data_universal(url, channel_name):
-    """Farklı kanal yapılarına göre veri çeker."""
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
-    }
+def get_cnbce_alternative():
+    """CNBC-e için resmi site yerine daha kolay kazınan bir kaynak kullanır."""
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    # Alternatif kaynak: Haberler.com yayın akışı sayfası botlara daha açıktır
+    url = "https://www.haberler.com/yayin-akisi/cnbc-e/"
     try:
-        # CNBC-E ÖZEL: Eğer kendi sitesi kapalıysa alternatif bir akış sitesinden deneyelim
-        if channel_name == "CNBC-E":
-            # Alternatif olarak tvyayinakisi.com veya benzeri bir aggregator deniyoruz
-            test_url = "https://www.tvyayinakisi.com/cnbc-e-yayin-akisi/"
-            r = requests.get(test_url, headers=headers, timeout=20)
-        else:
-            r = requests.get(url, headers=headers, timeout=20)
-            
+        r = requests.get(url, headers=headers, timeout=20)
         r.encoding = 'utf-8'
         soup = BeautifulSoup(r.text, 'html.parser')
-        results = []
+        programs = []
+        
+        # Haberler.com üzerindeki yapı: .yayinAkisiList içindeki li'ler
+        items = soup.select('.yayinAkisiList li')
+        for item in items:
+            time_el = item.select_one('div:nth-child(1)') # Saat genelde ilk div
+            title_el = item.select_one('div:nth-child(2)') # Başlık ikinci div
+            if time_el and title_el:
+                time_str = time_el.get_text(strip=True)
+                if re.match(r'^\d{2}:\d{2}$', time_str):
+                    programs.append({
+                        'time': time_str,
+                        'title': title_el.get_text(strip=True)
+                    })
+        return programs
+    except:
+        return []
 
-        # Tüm sayfadaki Saat - Program eşleşmelerini ara (En garantici yöntem)
-        # Regex: 00:00 ile 23:59 arası saatleri ve yanındaki metni bulur
+def get_dmax_data():
+    """DMAX için çalışan mevcut yapıyı korur."""
+    headers = {"User-Agent": "Mozilla/5.0"}
+    try:
+        r = requests.get("https://www.dmax.com.tr/yayin-akisi", headers=headers, timeout=20)
+        soup = BeautifulSoup(r.text, 'html.parser')
+        programs = []
+        # DMAX'te çalışan Regex yöntemini kullanıyoruz
         text_content = soup.get_text(" | ", strip=True)
         matches = re.findall(r'(\d{2}[:\.]\d{2})\s*\|\s*([^|]{3,60})', text_content)
-
-        if not matches:
-            # Alternatif regex (Saat ve metin yan yanaysa)
-            matches = re.findall(r'(\d{2}[:\.]\d{2})\s+([A-ZÇĞİÖŞÜ].{3,50})', text_content)
-
         for m in matches:
-            time_str = m[0].replace('.', ':')
-            title_str = m[1].strip()
-            # Gereksiz kelimeleri filtrele
-            if len(title_str) > 3 and not any(x in title_str for x in ["Giriş", "Üye", "Daha Fazla", "Yayın Akışı"]):
-                results.append({'time': time_str, 'title': title_str})
-
-        return results
+            programs.append({'time': m[0].replace('.', ':'), 'title': m[1].strip()})
+        return programs
     except:
         return []
 
@@ -51,7 +56,7 @@ def update_epg():
         with gzip.GzipFile(fileobj=io.BytesIO(resp.content)) as f:
             xml_content = f.read().decode('utf-8')
 
-        # FOX -> NOW Değişimi
+        # NOW Değişimi
         xml_content = xml_content.replace('id="FOX.HD.tr"', 'id="NOW.HD.tr"')
         xml_content = xml_content.replace('channel="FOX.HD.tr"', 'channel="NOW.HD.tr"')
 
@@ -59,30 +64,25 @@ def update_epg():
         xml_content = re.sub(r'<programme[^>]+channel="DMAX\.HD\.tr".*?</programme>', '', xml_content, flags=re.DOTALL)
         xml_content = re.sub(r'<programme[^>]+channel="CNBC-E".*?</programme>', '', xml_content, flags=re.DOTALL)
 
-        print("2. Web verileri kazınıyor...")
-        # DMAX için orijinal sitesi hala 9 veriyor, CNBC-E için alternatif deniyoruz
-        dmax_data = get_data_universal("https://www.dmax.com.tr/yayin-akisi", "DMAX")
-        cnbce_data = get_data_universal("https://www.cnbce.com/yayin-akisi", "CNBC-E")
+        print("2. Veriler toplanıyor...")
+        dmax_list = get_dmax_data()
+        cnbce_list = get_cnbce_alternative() # Alternatif kaynaktan çek
 
-        print(f"> DMAX Bulunan: {len(dmax_data)}")
-        print(f"> CNBC-e Bulunan: {len(cnbce_data)}")
+        print(f"> DMAX: {len(dmax_list)} | CNBC-e: {len(cnbce_list)}")
 
         new_entries = ""
         today = datetime.now().strftime("%Y%m%d")
 
-        # Kanalları XML'e ekle
-        for cid, data_list in [("DMAX.HD.tr", dmax_data), ("CNBC-E", cnbce_data)]:
-            # Kanal tanımı yoksa ekle
+        # Veri İşleme
+        for cid, data in [("DMAX.HD.tr", dmax_list), ("CNBC-E", cnbce_list)]:
             if f'id="{cid}"' not in xml_content:
                 xml_content = xml_content.replace('</tv>', f'  <channel id="{cid}">\n    <display-name lang="tr">{cid}</display-name>\n  </channel>\n</tv>')
             
-            # Programları ekle
-            for p in data_list:
-                clean_time = p['time'].replace(':', '')[:4]
-                start = f"{today}{clean_time}00 +0300"
+            for p in data:
+                start = f"{today}{p['time'].replace(':', '')}00 +0300"
                 new_entries += f'  <programme start="{start}" channel="{cid}">\n'
                 new_entries += f'    <title lang="tr">{p["title"]}</title>\n'
-                new_entries += f'    <desc lang="tr">{p["title"]} - {cid} Yayın Akışı</desc>\n'
+                new_entries += f'    <desc lang="tr">{cid} Yayın Akışı</desc>\n'
                 new_entries += f'  </programme>\n'
 
         xml_content = xml_content.replace('</tv>', new_entries + '</tv>')
