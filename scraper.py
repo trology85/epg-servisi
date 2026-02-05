@@ -2,62 +2,61 @@ import requests
 import gzip
 import io
 import re
+import xml.etree.ElementTree as ET
 
 def update_epg():
-    # 1. Doğru saatlerin olduğu ana kaynak
     main_url = "https://epgshare01.online/epgshare01/epg_ripper_TR1.xml.gz"
-    # 2. Açıklamaların olduğu zengin kaynak
     rich_url = "https://streams.uzunmuhalefet.com/epg/tr.xml"
 
     try:
-        print("1. Dosyalar indiriliyor...")
-        # Ana kaynak (Gzip)
+        print("1. Kaynaklar indiriliyor...")
+        # Ana Kaynak (Saatleri Doğru Olan)
         resp_main = requests.get(main_url, timeout=30)
         with gzip.GzipFile(fileobj=io.BytesIO(resp_main.content)) as f:
             xml_main = f.read().decode('utf-8')
         
-        # Zengin kaynak (Düz XML)
+        # Zengin Kaynak (Sadece Açıklama İçin)
         resp_rich = requests.get(rich_url, timeout=60)
         resp_rich.encoding = 'utf-8'
         xml_rich = resp_rich.text
 
-        # --- ADIM 1: FOX -> NOW DEĞİŞİMİ ---
+        # FOX -> NOW dönüşümü
         xml_main = xml_main.replace('id="FOX.HD.tr"', 'id="NOW.HD.tr"').replace('channel="FOX.HD.tr"', 'channel="NOW.HD.tr"')
 
-        print("2. Özel kanallar için açıklamalar 'tr.xml'den sökülüyor...")
+        print("2. Açıklama eşleştirme motoru çalışıyor...")
         
-        # Sadece bu kanalların verilerini Zengin Kaynaktan alacağız
-        # Soldaki XML'deki orijinal ID, Sağdaki senin sistemindeki ID
-        special_channels = {
-            "CNBC-e": "CNBC-E",
-            "DMAX": "DMAX.HD.tr",
-            "TRT 2": "TRT2.tr"
-        }
+        # Zengin kaynaktaki açıklamaları bir sözlüğe (dictionary) alalım
+        # Anahtar: "Program Adı", Değer: "Açıklama"
+        descriptions = {}
+        rich_titles = re.findall(r'<title lang="tr">(.*?)</title>.*?<desc lang="tr">(.*?)</desc>', xml_rich, flags=re.DOTALL)
+        for title, desc in rich_titles:
+            descriptions[title.strip().lower()] = desc.strip()
 
-        rich_programmes = ""
-        for source_id, target_id in special_channels.items():
-            # Regex ile zengin dosyadan ilgili kanalı bul
-            pattern = rf'<programme[^>]+channel="{re.escape(source_id)}".*?</programme>'
-            matches = re.findall(pattern, xml_rich, flags=re.DOTALL)
+        # Ana dosyadaki her programı kontrol et ve eğer açıklaması yoksa/kısaysa zengin kaynaktan ekle
+        def add_desc(match):
+            prog_xml = match.group(0)
+            # Eğer programın zaten bir açıklaması varsa dokunma (veya değiştir)
+            if '<desc' in prog_xml:
+                return prog_xml
             
-            for m in matches:
-                # ID'sini senin sistemine uygun hale getir
-                fixed_p = re.sub(r'channel="[^"]+"', f'channel="{target_id}"', m)
-                rich_programmes += fixed_p + "\n"
-            
-            # Ana dosyadan bu kanalların (varsa) eski/boş verilerini temizle
-            xml_main = re.sub(rf'<programme[^>]+channel="{re.escape(target_id)}".*?</programme>', '', xml_main, flags=re.DOTALL)
+            title_match = re.search(r'<title lang="tr">(.*?)</title>', prog_xml)
+            if title_match:
+                title = title_match.group(1).strip().lower()
+                if title in descriptions:
+                    new_desc = f'\n    <desc lang="tr">{descriptions[title]}</desc>'
+                    return prog_xml.replace('</title>', f'</title>{new_desc}')
+            return prog_xml
 
-        print("3. Veriler birleştiriliyor...")
+        # Tüm program blokları üzerinde bu işlemi yap
+        final_xml = re.sub(r'<programme.*?</programme>', add_desc, xml_main, flags=re.DOTALL)
+
+        # Karakter ve CNBC-E/DMAX düzeltmeleri
+        final_xml = final_xml.replace('id="CNBC-e"', 'id="CNBC-E"').replace('channel="CNBC-e"', 'channel="CNBC-E"')
         
-        # Zengin programları ana dosyaya enjekte et
-        xml_final = xml_main.replace('</tv>', rich_programmes + "\n</tv>")
-
-        # Karakter setini garantilemek için mühürle
         with open("epg.xml", "w", encoding="utf-8-sig") as f:
-            f.write(xml_final)
+            f.write(final_xml)
             
-        print("--- BAŞARILI: Hibrit sistem aktif! ---")
+        print("--- BAŞARILI: Saatler korundu, açıklamalar transfer edildi! ---")
 
     except Exception as e:
         print(f"Hata: {e}")
