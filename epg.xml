@@ -42420,84 +42420,107 @@
   <channel id="CNBC-E">
     <display-name lang="tr">CNBC-E</display-name>
   </channel>
-  <programme start="20260205060000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">NASIL YAPILMIŞ?</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260204000000 +0300" stop="20260204030000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Belgesel</title>
   </programme>
-  <programme start="20260205070000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">ALASKA'NIN MİMARLARI</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260204030000 +0300" stop="20260204070000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Klip</title>
   </programme>
-  <programme start="20260205084600 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">DOĞA EVİ USTALARI</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260204070000 +0300" stop="20260204090000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Belgesel</title>
   </programme>
-  <programme start="20260205094000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">ALASKA HAVAYOLLARI</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260204090000 +0300" stop="20260204120000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Klip</title>
   </programme>
-  <programme start="20260205104000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">KIRSALIN USTALARI</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260204120000 +0300" stop="20260204140500 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Mevzu Ne</title>
   </programme>
-  <programme start="20260205114000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">ED STAFFORD İLE CESARET İSTEYEN RİTÜELLER</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260204140500 +0300" stop="20260204160000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Gezi Planı</title>
   </programme>
-  <programme start="20260205124000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">FIRTINANIN KALBİNDE</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260204160000 +0300" stop="20260204180000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Avukat Mahmet Şah Çelik Ve Tuğba Gönan ile Bir Dava Bin Çözüm</title>
   </programme>
-  <programme start="20260205134000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">DEPO SAVAŞLARI: TEKSAS</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260204180000 +0300" stop="20260204200000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">TMB Klip</title>
   </programme>
-  <programme start="20260205143500 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">İKİNCİ EL KRALLARI</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260204200000 +0300" stop="20260204210000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Belgesel</title>
   </programme>
-  <programme start="20260205153000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">HURDA AVCILARI</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260204210000 +0300" stop="20260204230000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Ana Haber</title>
   </programme>
-  <programme start="20260205163000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">TAMİRAT TADİLAT</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260204230000 +0300" stop="20260205000000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Gezi Planı</title>
   </programme>
-  <programme start="20260205183000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">KIRSALIN USTALARI</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260205000000 +0300" stop="20260205030000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Belgesel</title>
   </programme>
-  <programme start="20260205193000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">ALTIN PEŞİNDE: KÖPÜKLÜ SULAR</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260205030000 +0300" stop="20260205070000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Klip</title>
   </programme>
-  <programme start="20260205223000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">BERİNG BOĞAZI'NDA ALTIN</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260205070000 +0300" stop="20260205090000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Belgesel</title>
   </programme>
-  <programme start="20260205233000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">DENETİM ALTINDA</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260205090000 +0300" stop="20260205120000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Klip</title>
   </programme>
-  <programme start="20260205003000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">KIRSALIN USTALARI</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260205120000 +0300" stop="20260205140500 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Mevzu Ne</title>
   </programme>
-  <programme start="20260205013000 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">ALTIN PEŞİNDE: KÖPÜKLÜ SULAR</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260205140500 +0300" stop="20260205170000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Gezi Planı</title>
   </programme>
-  <programme start="20260205030500 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">ÇİFTE KURTULUŞ</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260205170000 +0300" stop="20260205180000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Belgesel</title>
   </programme>
-  <programme start="20260205043500 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">HURDA BİZİM İŞİMİZ</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260205180000 +0300" stop="20260205190000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Klip</title>
   </programme>
-  <programme start="20260205051500 +0300" channel="DMAX.HD.tr">
-    <title lang="tr">NASIL YAPILMIŞ?</title>
-    <desc lang="tr">DMAX.HD.tr Program Akışı</desc>
+<programme start="20260205190000 +0300" stop="20260205200000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Belgesel</title>
   </programme>
+<programme start="20260205200000 +0300" stop="20260205210000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Ufuk Ağca ile Bi Ondan Bi Bundan</title>
+  </programme>
+<programme start="20260205210000 +0300" stop="20260205230000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Ufuk Ağca ile Bi Ondan Bi Bundan</title>
+  </programme>
+<programme start="20260205230000 +0300" stop="20260206000000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Gezi Planı</title>
+  </programme>
+<programme start="20260206000000 +0300" stop="20260206030000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Belgesel</title>
+  </programme>
+<programme start="20260206030000 +0300" stop="20260206070000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Klip</title>
+  </programme>
+<programme start="20260206070000 +0300" stop="20260206090000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Belgesel</title>
+  </programme>
+<programme start="20260206090000 +0300" stop="20260206120000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Klip</title>
+  </programme>
+<programme start="20260206120000 +0300" stop="20260206140500 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Mevzu Ne</title>
+  </programme>
+<programme start="20260206140500 +0300" stop="20260206170000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Gezi Planı</title>
+  </programme>
+<programme start="20260206170000 +0300" stop="20260206180000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Belgesel</title>
+  </programme>
+<programme start="20260206180000 +0300" stop="20260206200000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">TMB Klip</title>
+  </programme>
+<programme start="20260206200000 +0300" stop="20260206210000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Belgesel</title>
+  </programme>
+<programme start="20260206210000 +0300" stop="20260206230000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Ana Haber</title>
+  </programme>
+<programme start="20260206230000 +0300" stop="20260207000000 +0300" channel="DMAX.HD.tr">
+    <title lang="tr">Gezi Planı</title>
+  </programme>
+
 </tv>
