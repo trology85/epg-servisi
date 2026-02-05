@@ -1,59 +1,44 @@
 import requests
 import gzip
 import io
-import xml.etree.ElementTree as ET
 
 def update_epg():
-    main_url = "https://epgshare01.online/epgshare01/epg_ripper_TR1.xml.gz"
-    rich_url = "https://streams.uzunmuhalefet.com/epg/tr.xml"
+    # SAATLERİ VE İÇERİĞİ DOĞRU OLAN ANA KAYNAK
+    source_url = "https://epgshare01.online/epgshare01/epg_ripper_TR1.xml.gz"
 
     try:
-        print("1. Kaynaklar indiriliyor...")
-        # Ana Dosya (TR1)
-        resp_main = requests.get(main_url, timeout=30)
-        with gzip.GzipFile(fileobj=io.BytesIO(resp_main.content)) as f:
-            main_root = ET.fromstring(f.read())
-
-        # Zengin Dosya (tr.xml)
-        resp_rich = requests.get(rich_url, timeout=30)
-        resp_rich.encoding = 'utf-8'
-        rich_root = ET.fromstring(resp_rich.text)
-
-        print("2. TRT 2 verisi cerrahi yöntemle aktarılıyor...")
+        print("1. Güvenilir kaynak indiriliyor (Gzip)...")
+        resp = requests.get(source_url, timeout=30)
         
-        # Zengin kaynaktan TRT 2 programlarını bul ve kopyala
-        for prog in rich_root.findall("programme"):
-            if prog.get("channel") == "TRT 2":
-                # Kanal adını senin sistemindeki isme (TRT2 HD) çevir
-                prog.set("channel", "TRT2 HD")
-                # Bu program bloğunu ana dosyanın içine güvenli bir şekilde ekle
-                main_root.append(prog)
+        # Gzip dosyasını açıp içeriği okuyoruz
+        with gzip.GzipFile(fileobj=io.BytesIO(resp.content)) as f:
+            xml_data = f.read().decode('utf-8')
 
-        print("3. FOX -> NOW dönüşümü yapılıyor...")
-        # FOX kanallarını NOW olarak güncelle
-        for channel in main_root.findall("channel"):
-            if channel.get("id") == "FOX.HD.tr":
-                channel.set("id", "NOW.HD.tr")
-                display_name = channel.find("display-name")
-                if display_name is not None:
-                    display_name.text = "NOW"
-
-        for prog in main_root.findall("programme"):
-            if prog.get("channel") == "FOX.HD.tr":
-                prog.set("channel", "NOW.HD.tr")
-
-        # Dosyayı kaydet
-        print("4. XML yapısı doğrulanıyor ve kaydediliyor...")
-        tree = ET.ElementTree(main_root)
-        
-        # UTF-8 ve XML Deklarasyonu ile kaydet (En güvenli format)
-        with open("epg.xml", "wb") as f:
-            tree.write(f, encoding="utf-8", xml_declaration=True)
+        # --- SADECE GEREKLİ DÜZELTMELER ---
+        # FOX -> NOW dönüşümü (Saatlere dokunmuyoruz, zaten +3 geliyor)
+        replacements = {
+            'id="FOX.HD.tr"': 'id="NOW.HD.tr"',
+            'channel="FOX.HD.tr"': 'channel="NOW.HD.tr"',
             
-        print("--- BAŞARILI: XML yapısı korundu, crash riski ortadan kalktı! ---")
+            # Eğer listede CNBC-E ve DMAX isimleri farklıysa buraya ekleyebiliriz
+            'id="CNBC-e"': 'id="CNBC-E"',
+            'channel="CNBC-e"': 'channel="CNBC-E"',
+            'id="DMAX.tr"': 'id="DMAX.HD.tr"',
+            'channel="DMAX.tr"': 'channel="DMAX.HD.tr"'
+        }
+
+        print("2. Kanal isimleri senkronize ediliyor...")
+        for old, new in replacements.items():
+            xml_data = xml_data.replace(old, new)
+
+        # Dosyayı kaydediyoruz
+        with open("epg.xml", "w", encoding="utf-8") as f:
+            f.write(xml_data)
+            
+        print("--- BAŞARILI: İlk kaynağa dönüldü, saatler ve içerikler artık doğru. ---")
 
     except Exception as e:
-        print(f"Hata detayı: {e}")
+        print(f"Hata oluştu: {e}")
 
 if __name__ == "__main__":
     update_epg()
